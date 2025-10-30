@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/style.scss"></head>
+
+<body>
+
+
+
+    <main class="">
+
+        <section id="login" class="min-vh-100 d-flex flex-column align-items-center justify-content-center auth">
+            <div class="d-flex justify-content-center mb-3">
+                <img src="../../public/Logo.svg" alt="" class="w-75">
+            </div>
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <div class="d-flex flex-column align-items-center justify-content-center px-3 py-4 w-880 bg-white p-3 rounded-4 border"
+                    id="login-form">
+                    <div>
+                        <h2 class="text-center">Log in to your account</h2>
+                        <p class="text-center fw-normal">Doesn't have an account? <a href="./signup.html"
+                                class="text-decoration-none text-dark anchor">Sign up</a></p>
+                    </div>
+                    <div class="row mt-4 w-100">
+                        <div class="col-md-12 mb-3">
+                            <label for="username" class="text-muted mb-2">What's your email or username?</label>
+                            <input type="text" class="form-control p-2" id="username"
+                                placeholder="Enter your email or username">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="password" class="text-muted mb-2">What's your password?</label>
+                            <div class="position-relative">
+                                <input type="password" class="form-control p-2 pe-5" id="password"
+                                    placeholder="Enter your Password">
+                                <button type="button" id="togglePassword"
+                                    class="btn btn-link text-muted position-absolute top-50 end-0 translate-middle-y pe-3"
+                                    aria-label="Show password">
+                                    <i class="bi bi-eye fs-5" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <p class="text-danger mt-2 mb-0">Password is incorrect</p>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label text-muted" for="flexCheckDefault">
+                                  Remember me
+                                </label>
+                              </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="./forgot-password.html"
+                                    class="text-muted fw-normal text-decoration-none anchor">Forgot Password?</a>
+                                <a href="../home/homepage.html"
+                                    class="px-5 rounded-pill py-2 bg-primary text-white text-decoration-none fs-5">Login</a>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                            <div class="h-1 w-100"></div>
+                            <div>OR</div>
+                            <div class="h-1 w-100"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center flex-wrap flex-md-nowrap gap-3">
+                            <button
+                                class="btn w-100 text-muted fs-4 flex-nowrap d-flex justify-content-center align-items-center fs-6 border rounded-pill px-4 py-2">
+                                <i class="bi bi-facebook me-2 text-primary" aria-hidden="true"></i>
+                                Log in with Facebook
+                            </button>
+                            <button
+                                class="btn w-100 text-muted flex-nowrap fs-4 d-flex justify-content-center align-items-center fs-6 border rounded-pill px-4 py-2">
+                                <i class="bi bi-google me-2 text-primary" aria-hidden="true"></i>
+                                Log in with Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+</body>
+
+</html>

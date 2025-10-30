@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/style.scss">
+</head>
+<body>
+
+    <main class="">
+
+        <section id="login" class="min-vh-100 d-flex flex-column py-3 align-items-center justify-content-center auth">
+            <div class="d-flex justify-content-center mb-3">
+                <img src="../../public/Logo.svg" alt="" class="w-75">
+            </div>
+            <div class="d-flex align-items-center justify-content-center w-100 select2-container">
+                <div class="d-flex flex-column align-items-center justify-content-center px-3 py-4 w-880 bg-white p-3 rounded-4 border"
+                    id="login-form">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <h2 class="text-center">Address</h2>
+                        <p class="text-center fw-normal">Please provide your address details</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center mb-3">
+                        <div class="avatar-wrapper position-relative">
+                            <img id="profilePreview" class="avatar rounded-circle" src="" alt="Profile preview">
+                            <span class="avatar-placeholder d-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+                                <i class="bi bi-person-fill fs-2 text-muted"></i>
+                            </span>
+                            <label for="profileInput" class="avatar-action d-flex align-items-center justify-content-center" aria-label="Upload profile picture">
+                                <i class="bi bi-camera"></i>
+                            </label>
+                            <input id="profileInput" type="file" accept="image/*" class="d-none">
+                        </div>
+                    </div>
+                    <div class="row mt-4 w-100">
+                        <div class="col-md-12 mb-3">
+                            <label for="firstname" class="text-muted mb-2">Street Address</label>
+                            <input type="text" class="form-control p-2" id="streetaddress"
+                                placeholder="Enter your street address">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="city" class="text-muted mb-2">City</label>
+                            <input type="text" class="form-control p-2" id="city"
+                                placeholder="Enter your city">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastname" class="text-muted mb-2">State</label>
+                                <input type="text" class="form-control p-2" id="state"
+                                placeholder="Enter your state">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="zipcode" class="text-muted mb-2">Zip Code</label>
+                                <input type="text" class="form-control p-2" id="zipcode"
+                                placeholder="Enter your zip code">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="country" class="text-muted mb-2">Country</label>
+                                    <select id="countrySelect" class="form-select">
+                                        <option></option>
+                                        <option value="US" data-iso="US">United States</option>
+                                        <option value="CA" data-iso="CA">Canada</option>
+                                        <option value="GB" data-iso="GB">United Kingdom</option>
+                                        <option value="AU" data-iso="AU">Australia</option>
+                                        <option value="IN" data-iso="IN">India</option>
+                                        <option value="PK" data-iso="PK">Pakistan</option>
+                                        <option value="BD" data-iso="BD">Bangladesh</option>
+                                        <option value="NG" data-iso="NG">Nigeria</option>
+                                        <option value="KE" data-iso="KE">Kenya</option>
+                                        <option value="EG" data-iso="EG">Egypt</option>
+                                        <option value="ZA" data-iso="ZA">South Africa</option>
+                                        <option value="AE" data-iso="AE">United Arab Emirates</option>
+                                        <option value="SA" data-iso="SA">Saudi Arabia</option>
+                                        <option value="CN" data-iso="CN">China</option>
+                                        <option value="JP" data-iso="JP">Japan</option>
+                                        <option value="KR" data-iso="KR">South Korea</option>
+                                        <option value="DE" data-iso="DE">Germany</option>
+                                        <option value="FR" data-iso="FR">France</option>
+                                        <option value="ES" data-iso="ES">Spain</option>
+                                        <option value="IT" data-iso="IT">Italy</option>
+                                        <option value="NL" data-iso="NL">Netherlands</option>
+                                        <option value="SE" data-iso="SE">Sweden</option>
+                                        <option value="NO" data-iso="NO">Norway</option>
+                                        <option value="DK" data-iso="DK">Denmark</option>
+                                        <option value="FI" data-iso="FI">Finland</option>
+                                        <option value="RU" data-iso="RU">Russia</option>
+                                        <option value="TR" data-iso="TR">Turkey</option>
+                                        <option value="IR" data-iso="IR">Iran</option>
+                                        <option value="BR" data-iso="BR">Brazil</option>
+                                        <option value="AR" data-iso="AR">Argentina</option>
+                                        <option value="MX" data-iso="MX">Mexico</option>
+                                    </select>
+                        </div>
+                       
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <a href="./reset-password.html"
+                                    class="px-5 rounded-pill py-2 bg-primary text-white text-decoration-none fs-5">Save and Next</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/style.scss">
+</head>
+
+<body>
+    <header class="header bg-white border-bottom position-sticky top-0 z-10">
+        <div class="header-container w-100 px-4 d-flex align-items-center justify-content-between">
+            <div class="header-left d-flex align-items-center">
+                <button class="btn  btn-sm d-block d-xl-none p-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18"></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M3 18h18"></path>
+                    </svg>
+                </button>
+                <a href="./homepage.html" class="logo d-flex align-items-center text-decoration-none d-none d-md-block">
+                    <img src="../../public/Logo.svg" alt="logo" class="w-50">
+                </a>
+                <a href="./homepage.html" class="logo d-flex align-items-center text-decoration-none d-block d-md-none">
+                    <img src="../../public/smalllogo.svg" alt="logo" class="w-75">
+                </a>
+            </div>
+            <div class="header-right d-flex align-items-center gap-3">
+                <div class="nav-items d-flex align-items-center gap-2">
+                    <a href="#"
+                        class="nav-item position-relative d-flex align-items-center justify-content-center rounded-3"
+                        title="Messages">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span class="notification-dot bg-danger rounded-circle"></span>
+                    </a>
+
+                    <a href="#"
+                        class="nav-item position-relative d-flex align-items-center justify-content-center rounded-3"
+                        title="Notifications">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span
+                            class="notification-badge position-absolute d-flex align-items-center justify-content-center fw-semibold text-white">3</span>
+                    </a>
+
+                </div>
+                <div class="profile-menu position-relative mx-3 dropdown">
+                    <button
+                        class="profile-btn border-0 bg-none p-2 rounded-circle dropdown-toggle d-flex align-items-center gap-2 bg-white"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="profile-avatar position-relative rounded-circle overflow-hidden">
+                            <div class="avatar-ring position-absolute bg-primary rounded-circle"></div>
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                                alt="Profile" class="profile-img rounded-circle w-100 h-100 object-fit-cover">
+                        </div>
+                    </button>
+                    <ul
+                        class="dropdown-menu dropdown-menu-end position-absolute right-0 mt-3 rounded-4 py-3 px-0 list-unstyled z-10 overflow-hidden d-none">
+                        <li class="dropdown-header py-3 px-4 border-bottom mb-3">
+                            <div class="user-info d-flex align-items-center gap-3">
+                                <div class="user-avatar rounded-circle overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                                        alt="Profile" class="w-100 h-100 object-fit-cover">
+                                </div>
+                                <div class="user-details">
+                                    <a href="#" class="user-name text-decoration-none fw-semibold text-dark fs-6">John
+                                        Doe</a>
+                                    <div class="user-email text-muted fs-6">john@dogsdale.com</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium">
+                                <i class="bi bi-person fs-6"></i>
+                                Profile
+                            </a></li>
+                        <li><a href="#"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium">
+                                <i class="bi bi-gear fs-6"></i>
+                                Settings
+                            </a></li>
+                        <li>
+                            <hr class="dropdown-divider my-2 border-0">
+                        </li>
+                        <li><a href="../auth/login.html"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium logout">
+                                <i class="bi bi-box-arrow-right fs-6"></i>
+                                Logout
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="">
+        <div class="profile-home-container shadow-sm">
+            <div class="container p-0">
+                <!-- Cover -->
+                <div class="position-relative">
+                    <img src="../../public/jeep.jpg" alt="profile cover"
+                        class="w-100 h-500 object-fit-cover cover-image rounded-bottom-2">
+                    <button
+                        class="btn btn-light d-none d-md-inline-flex align-items-center gap-2 position-absolute end-0 bottom-0 m-3 shadow-sm">
+                        <i class="bi bi-camera"></i>
+                        Edit cover photo
+                    </button>
+                </div>
+
+                <!-- Profile Header Content -->
+                <div class="d-flex flex-column flex-md-row align-items-start align-items-md-end justify-content-between pt-5 pt-lg-3 pb-3 border-2 border-bottom  px-2 px-md-3"
+                    style="margin-top: -60px;">
+                    <!-- Left: Avatar + Name -->
+                    <div class="d-flex align-items-end w-100">
+                        <div class="position-relative">
+                            <img src="../../public/dog.png" alt="profile"
+                                class="rounded-circle bg-white border border-3 border-dark object-fit-cover" width="160"
+                                height="160">
+                            <button class="btn btn-light position-absolute bottom-0 end-0 rounded-circle p-2 shadow-sm">
+                                <i class="bi bi-camera"></i>
+                            </button>
+                        </div>
+                        <div class="ms-3">
+                            <h3 class="mb-1 fw-semibold">AK HasSan</h3>
+                            <div class="text-muted fw-medium">4K followers • 1.2K following</div>
+                            <div class="d-flex align-items-center mt-2">
+                                <img src="../../public/dog.png" class="rounded-circle border me-1 object-fit-cover"
+                                    width="28" height="28" alt="follower">
+                                <img src="../../public/dog.png" class="rounded-circle border me-1 object-fit-cover"
+                                    width="28" height="28" alt="follower">
+                                <span class="ms-1 fw-medium text-muted">and others follow this</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Actions -->
+                    <div
+                        class="d-flex align-items-center justify-content-center justify-content-md-end w-100 w-md-auto gap-2 mt-3 mt-md-0">
+                        <a href="#" class="btn btn-primary text-white px-3 fs-6 d-flex align-items-center gap-2">
+                            <i class="bi bi-person-plus"></i> Follow
+                        </a>
+                        <button class="btn btn-secondary text-white px-3 fs-6 d-flex align-items-center gap-2">
+                            <i class="bi bi-chat-dots"></i> Message
+                        </button>
+
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 pt-2">
+                    <a href="./profile-home.html"
+                        class="btn btn-link text-primary text-decoration-none  px-3 fs-5 d-flex align-items-center gap-2 anchor-hover fw-medium">
+                        <i class="bi bi-clock-history"></i> Timeline
+                    </a>
+                    <a href="./profile-friends.html"
+                        class="btn btn-link text-dark text-decoration-none  px-3 fs-5 d-flex align-items-center gap-2 anchor-hover fw-medium">
+                        <i class="bi bi-people"></i> Friends
+                    </a>
+                    <a href="./profile-videos.html"
+                        class="btn btn-link text-dark text-decoration-none  px-3 fs-5 d-flex align-items-center gap-2 anchor-hover fw-medium">
+                        <i class="bi bi-play"></i> Videos
+                    </a>
+                    <a href="./profile-photos.html"
+                        class="btn btn-link text-dark text-decoration-none  px-3 fs-5 d-flex align-items-center gap-2 anchor-hover fw-medium">
+                        <i class="bi bi-images"></i> Photos
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4 ">
+            <div class="row">
+                <div class="col-lg-5 mb-3 about-section">
+                    <div class="bg-white p-3 rounded-3 border">
+                        <h3 class="fw-medium fs-4">About</h3>
+                        <div class="bio-container">
+                            <p class="text-muted text-center mb-3 fs-5">Be the best whatever you are</p>
+                            <textarea name="" id="" class="form-control h-auto p-2" rows="3"
+                                placeholder="Enter your biography"></textarea>
+                            <div class="d-flex justify-content-end gap-2 align-items-center mt-3">
+                                <button class="btn bg-light text-dark fw-medium px-4 py-2 rounded-2">Cancel</button>
+                                <button class="btn bg-light text-dark fw-medium px-4 py-2 rounded-2">Save</button>
+                            </div>
+                            <button class="btn bg-light text-dark fw-medium px-4 py-2 rounded-2 w-100 mt-2">Edit
+                                Bio</button>
+                        </div>
+                        <div class="d-flex flex-column gap-3 py-3">
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-briefcase me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5">Works at "Kaleemi Kennel Club"</p>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-mortarboard me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5">Studied at "Preston University"</p>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-geo-alt me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5">Lives in "Karachi, Pakistan"</p>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-heart me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5">Engaged</p>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-star-fill me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5">Favourite Breed is "Perro De Pressa
+                                    Mallorquin of france"</p>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-building me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5">Breeder</p>
+                            </div>
+                            <button class="btn bg-light text-dark fw-medium px-4 py-2 rounded-2 w-100"
+                                data-bs-toggle="modal" data-bs-target="#editDetailsModal">Edit
+                                Details</button>
+                        </div>
+                        <div class="d-flex flex-column gap-3 py-3">
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-globe me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5"><a href="#"
+                                        class="text-decoration-none text-dark anchor-hover">kaleemikennels.com</a></p>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-facebook me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5"><a href="#"
+                                        class="text-decoration-none text-dark anchor-hover">facebook.com/kaleemikennels</a>
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-instagram me-2 text-muted fs-5"></i>
+                                <p class="text-muted text-start gap-2 mb-0 fs-5"><a href="#"
+                                        class="text-decoration-none text-dark anchor-hover">instagram.com/kaleemikennels</a>
+                                </p>
+                            </div>
+                            <button class="btn bg-light text-dark fw-medium px-4 py-2 rounded-2 w-100 mt-2"
+                                data-bs-toggle="modal" data-bs-target="#editSocialModal">Edit
+                                Social Media</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="create-post-container bg-white p-3 rounded-3 border">
+                        <div class="create-post-card">
+                            <!-- Header Section -->
+                            <div
+                                class="post-header d-flex align-items-start gap-2 justify-content-between flex-sm-column flex-md-row flex-wrap mb-4">
+                                <div class="user-info d-flex align-items-start gap-3">
+                                    <img src="../../public/dog.png" alt="Ali Hassan"
+                                        class="user-avatar rounded-circle object-fit-cover border" width="50px"
+                                        height="50px">
+                                    <a href="#"
+                                        class="user-name text-decoration-none text-wrap text-dark fw-medium fs-5">Ali
+                                        Hassan Kaleemi</a>
+                                </div>
+                                <div class="post-type-selector d-flex flex-column align-items-end gap-2">
+                                    <div class="dropdown position-relative">
+                                        <button
+                                            class="dropdown-toggle bg-none border-0 text-muted d-flex align-items-center gap-2 cursor-pointer py-2 px-3"
+                                            type="button" id="postTypeDropdown" aria-expanded="false">
+                                            <span class="dropdown-text">Advance Posts</span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="postTypeDropdown">
+                                            <li><a class="dropdown-item d-block py-3 px-4 list-unstyled text-decoration-none border-0 bg-none w-100 text-start active"
+                                                    href="#" data-type="random">Random Post</a></li>
+                                            <li><a class="dropdown-item d-block py-3 px-4 list-unstyled text-decoration-none border-0 bg-none w-100 text-start"
+                                                    href="#" data-type="selling">Selling</a></li>
+                                            <li><a class="dropdown-item d-block py-3 px-4 list-unstyled text-decoration-none border-0 bg-none w-100 text-start"
+                                                    href="#" data-type="buying">Buying</a></li>
+                                            <li><a class="dropdown-item d-block py-3 px-4 list-unstyled text-decoration-none border-0 bg-none w-100 text-start"
+                                                    href="#" data-type="stud">Stud Dogs</a></li>
+                                            <li><a class="dropdown-item d-block py-3 px-4 list-unstyled text-decoration-none border-0 bg-none w-100 text-start"
+                                                    href="#" data-type="frozensemens">Frozen Semens</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="selected-type mt-2">
+                                        <span
+                                            class="type-indicator bg-secondary text-white px-4 py-2 rounded-4 fw-medium d-inline-block">Random
+                                            Post</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Content Input Section (Only for Random Post) -->
+                            <div class="post-content mb-4" id="randomPostContent">
+                                <textarea class="post-textarea form-control h-auto"
+                                    placeholder="Tell something about your dog.." rows="4"></textarea>
+                            </div>
+
+                            <!-- Selling Form Section (Hidden by default) -->
+                            <div class="selling-form-section" id="sellingForm" style="display: none;">
+
+                                <div class="row g-3">
+                                    <!-- Row 1: Dog Name -->
+                                    <div class="col-12">
+                                        <label for="dogName" class="form-label text-muted">Dog Name</label>
+                                        <input type="text" id="dogName" class="form-control"
+                                            placeholder="Enter dog's name">
+                                    </div>
+
+                                    <!-- Row 2: Breed Name & Bloodline -->
+                                    <div class="col-md-6">
+                                        <label for="breedName" class="form-label text-muted">Breed Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="breedName" class="form-control"
+                                            placeholder="Enter breed name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="bloodline" class="form-label text-muted">Bloodline <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="bloodline" class="form-control"
+                                            placeholder="Enter bloodline" required>
+                                    </div>
+
+                                    <!-- Row 3: Age & Price -->
+                                    <div class="col-md-6">
+                                        <label for="age" class="form-label text-muted">Age <span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" id="age" class="form-control" placeholder="Enter age"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="price" class="form-label text-muted">Price (USD) <span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" id="price" class="form-control" placeholder="Enter price"
+                                            required>
+                                    </div>
+
+                                    <!-- Row 4: Gender & Status -->
+                                    <div class="col-md-6">
+                                        <label for="gender" class="form-label text-muted">Gender</label>
+                                        <select id="gender" class="form-select">
+                                            <option value="">Select Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="status" class="form-label text-muted">Status</label>
+                                        <select id="status" class="form-select">
+                                            <option value="">Select Status</option>
+                                            <option value="available">Available</option>
+                                            <option value="sold">Sold</option>
+                                            <option value="reserved">Reserved</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Row 5: Registration Number & Pedigree Link -->
+                                    <div class="col-md-6">
+                                        <label for="registrationNumber" class="form-label text-muted">Registration
+                                            Number (Optional)</label>
+                                        <input type="text" id="registrationNumber" class="form-control"
+                                            placeholder="Enter registration number">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="pedigreeLink" class="form-label text-muted">Pedigree Link</label>
+                                        <input type="url" id="pedigreeLink" class="form-control"
+                                            placeholder="Enter pedigree link">
+                                    </div>
+
+                                    <!-- Row 8: Description -->
+                                    <div class="col-12">
+                                        <label for="description" class="form-label text-muted">Description</label>
+                                        <textarea id="description" class="form-control h-auto" rows="4"
+                                            placeholder="Enter detailed description about the dog"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Buying Form Section (Hidden by default) -->
+                            <div class="buying-form-section" id="buyingForm" style="display: none;">
+                                <div class="row g-3">
+                                    <!-- Row 1: Breed Name & Bloodline -->
+                                    <div class="col-md-6">
+                                        <label for="buyBreedName" class="form-label text-muted">Breed Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="buyBreedName" class="form-control"
+                                            placeholder="Enter breed name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="buyBloodline" class="form-label text-muted">Bloodline <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="buyBloodline" class="form-control"
+                                            placeholder="Enter bloodline" required>
+                                    </div>
+
+                                    <!-- Row 2: Age & Price -->
+                                    <div class="col-md-6">
+                                        <label for="buyAge" class="form-label text-muted">Age <span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" id="buyAge" class="form-control" placeholder="Enter age"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="buyPrice" class="form-label text-muted">Price (USD) <span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" id="buyPrice" class="form-control"
+                                            placeholder="Enter price" required>
+                                    </div>
+
+                                    <!-- Row 3: Description -->
+                                    <div class="col-12">
+                                        <label for="buyDescription" class="form-label text-muted">Description <span
+                                                class="text-danger">*</span></label>
+                                        <textarea id="buyDescription" class="form-control h-auto" rows="4"
+                                            placeholder="Describe what you're looking for" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stud Dog Form Section (Hidden by default) -->
+                            <div class="stud-form-section" id="studForm" style="display: none;">
+                                <div class="row g-3">
+                                    <!-- Row 1: Dog Name -->
+                                    <div class="col-12">
+                                        <label for="studDogName" class="form-label text-muted">Dog Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="studDogName" class="form-control"
+                                            placeholder="Enter dog's name" required>
+                                    </div>
+
+                                    <!-- Row 2: Breed Name & Bloodline -->
+                                    <div class="col-md-6">
+                                        <label for="studBreedName" class="form-label text-muted">Breed Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="studBreedName" class="form-control"
+                                            placeholder="Enter breed name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="studBloodline" class="form-label text-muted">Bloodline <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="studBloodline" class="form-control"
+                                            placeholder="Enter bloodline" required>
+                                    </div>
+
+                                    <!-- Row 3: Age & Price per Breeding Cycle -->
+                                    <div class="col-md-6">
+                                        <label for="studAge" class="form-label text-muted">Age <span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" id="studAge" class="form-control" placeholder="Enter age"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="studPrice" class="form-label text-muted">Price per Breeding Cycle
+                                            (USD)
+                                            <span class="text-danger">*</span></label>
+                                        <input type="number" id="studPrice" class="form-control"
+                                            placeholder="Enter price per breeding cycle" required>
+                                    </div>
+
+                                    <!-- Row 4: Sticks per Breeding Cycle & Status -->
+                                    <div class="col-md-6">
+                                        <label for="studSticks" class="form-label text-muted">Sticks per Breeding Cycle
+                                            <span class="text-danger">*</span></label>
+                                        <input type="number" id="studSticks" class="form-control"
+                                            placeholder="Enter number of sticks" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="studStatus" class="form-label text-muted">Status <span
+                                                class="text-danger">*</span></label>
+                                        <select id="studStatus" class="form-select" required>
+                                            <option value="">Select Status</option>
+                                            <option value="available">Available</option>
+                                            <option value="busy">Busy</option>
+                                            <option value="retired">Retired</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Row 5: Pedigree Link -->
+                                    <div class="col-md-12">
+                                        <label for="studPedigreeLink" class="form-label text-muted">Pedigree
+                                            Link</label>
+                                        <input type="url" id="studPedigreeLink" class="form-control"
+                                            placeholder="Enter pedigree link">
+                                    </div>
+
+                                    <!-- Row 6: Description -->
+                                    <div class="col-12">
+                                        <label for="studDescription" class="form-label text-muted">Description <span
+                                                class="text-danger">*</span></label>
+                                        <textarea id="studDescription" class="form-control h-auto" rows="4"
+                                            placeholder="Describe the stud dog's characteristics, achievements, and breeding history"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Frozen Semens Form Section (Hidden by default) -->
+                            <div class="frozen-form-section" id="frozenForm" style="display: none;">
+                                <div class="row g-3">
+                                    <!-- Row 1: Dog Name -->
+                                    <div class="col-12">
+                                        <label for="frozenDogName" class="form-label text-muted">Dog Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="frozenDogName" class="form-control"
+                                            placeholder="Enter dog's name" required>
+                                    </div>
+
+                                    <!-- Row 2: Breed Name & Bloodline -->
+                                    <div class="col-md-6">
+                                        <label for="frozenBreedName" class="form-label text-muted">Breed Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="frozenBreedName" class="form-control"
+                                            placeholder="Enter breed name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="frozenBloodline" class="form-label text-muted">Bloodline <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="frozenBloodline" class="form-control"
+                                            placeholder="Enter bloodline" required>
+                                    </div>
+
+                                    <!-- Row 3: Price per 5cc & Stored Since -->
+                                    <div class="col-md-6">
+                                        <label for="frozenPrice" class="form-label text-muted">Price per 5cc (USD) <span
+                                                class="text-danger">*</span></label>
+                                        <input type="number" id="frozenPrice" class="form-control"
+                                            placeholder="Enter price per 5cc" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="frozenStoredSince" class="form-label text-muted">Stored Since <span
+                                                class="text-danger">*</span></label>
+                                        <input type="date" id="frozenStoredSince" class="form-control" required>
+                                    </div>
+
+                                    <!-- Row 4: Status -->
+                                    <div class="col-md-12">
+                                        <label for="frozenStatus" class="form-label text-muted">Status <span
+                                                class="text-danger">*</span></label>
+                                        <select id="frozenStatus" class="form-select" required>
+                                            <option value="">Select Status</option>
+                                            <option value="available">Available</option>
+                                            <option value="sold">Sold</option>
+                                            <option value="reserved">Reserved</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Row 5: Pedigree Link -->
+                                    <div class="col-12">
+                                        <label for="frozenPedigreeLink" class="form-label text-muted">Pedigree Link
+                                            (Optional)</label>
+                                        <input type="url" id="frozenPedigreeLink" class="form-control"
+                                            placeholder="Enter pedigree link">
+                                    </div>
+
+                                    <!-- Row 6: Description -->
+                                    <div class="col-12">
+                                        <label for="frozenDescription" class="form-label text-muted">Description <span
+                                                class="text-danger">*</span></label>
+                                        <textarea id="frozenDescription" class="form-control h-auto" rows="4"
+                                            placeholder="Describe the frozen semen quality, storage conditions, and any additional information"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Bar -->
+                            <div class="post-actions d-flex justify-content-between align-items-center mt-3">
+                                <div class="attachment-options d-flex gap-3 position-relative">
+                                    <button class="attachment-btn bg-none border-0 btn" type="button"
+                                        title="Attach File" id="fileUploadBtn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.64 16.2a2 2 0 0 1-2.83-2.83l8.49-8.49" />
+                                        </svg>
+                                    </button>
+                                    <button class="attachment-btn bg-none border-0 btn" type="button"
+                                        title="Add Photo/Video" id="mediaUploadBtn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                            <circle cx="8.5" cy="8.5" r="1.5" />
+                                            <polyline points="21,15 16,10 5,21" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Hidden file inputs -->
+                                    <input type="file" id="fileInput"
+                                        accept=".doc,.docx,.pdf,.ppt,.pptx,.xls,.xlsx,.txt" style="display: none;">
+                                    <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
+
+                                </div>
+                                <button class="btn btn-primary px-5 fs-5 py-2 text-white" id="postBtn" type="button">
+                                    Post
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- filters section -->
+                    <div class="bg-white rounded-3 mt-3 border" id="home-filters">
+                        <div class="accordion-header p-3 d-flex justify-content-between align-items-center"
+                            data-bs-toggle="collapse" data-bs-target="#filtersCollapse" aria-expanded="false"
+                            aria-controls="filtersCollapse" style="cursor: pointer;">
+                            <h4 class="fw-medium mb-0 text-secondary">
+                                <i class="bi bi-funnel"></i> Filters
+                            </h4>
+                            <i class="bi bi-chevron-down filter-toggle-icon" id="filterToggleIcon"></i>
+                        </div>
+                        <div class="collapse" id="filtersCollapse">
+                            <div class="p-3 pt-0">
+                                <div class="row g-3">
+                                    <div class="col-lg-4">
+                                        <label for="postTypeSelect" class="form-label text-muted text-muted mb-2">Post
+                                            Type</label>
+                                        <select id="postTypeSelect" class="form-select">
+                                            <option value="">Select Post Type</option>
+                                            <option value="random">Random Post</option>
+                                            <option value="selling">Selling</option>
+                                            <option value="buying">Buying</option>
+                                            <option value="stud">Stud Dogs</option>
+                                            <option value="frozensemens">Frozen Semens</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="regionSelect"
+                                            class="form-label text-muted text-muted mb-2">Region</label>
+                                        <select id="regionSelect" class="form-select">
+                                            <option value="">Select Region</option>
+                                            <option value="na">North America</option>
+                                            <option value="eu">Europe</option>
+                                            <option value="as">Asia</option>
+                                            <option value="sa">South America</option>
+                                            <option value="af">Africa</option>
+                                            <option value="oc">Oceania</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="breedSelect"
+                                            class="form-label text-muted text-muted mb-2">Breed</label>
+                                        <select id="breedSelect" class="form-select">
+                                            <option value="">Select Breed</option>
+                                            <option value="germanshepherd">German Shepherd</option>
+                                            <option value="labrador">Labrador Retriever</option>
+                                            <option value="golden">Golden Retriever</option>
+                                            <option value="bulldog">Bulldog</option>
+                                            <option value="rottweiler">Rottweiler</option>
+                                            <option value="poodle">Poodle</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="bloodlineSelect"
+                                            class="form-label text-muted text-muted mb-2">Bloodlines</label>
+                                        <select id="bloodlineSelect" class="form-select">
+                                            <option value="">Select Bloodline</option>
+                                            <option value="working">Working Line</option>
+                                            <option value="show">Show Line</option>
+                                            <option value="american">American Line</option>
+                                            <option value="european">European Line</option>
+                                            <option value="field">Field Line</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="d-flex align-items-end h-100">
+                                            <button class="btn btn-primary w-100 h-56 text-white fs-5"><i
+                                                    class="bi bi-funnel-fill me-2"></i> Apply Filters</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- general posts section -->
+                    <div class="display-posts-section mt-3">
+                        <div class="post-card bg-white mb-3 border rounded-3  mb-0">
+                            <!-- Post Header -->
+                            <div class="d-flex justify-content-between align-items-start mb-2 py-3 px-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="../../public/dog.png" alt="Ali Hassan" class="rounded-circle me-3 border"
+                                        style="width: 50px; height: 50px; object-fit: cover;">
+                                    <div class="d-flex flex-column">
+                                        <a class="mb-0 fw-medium text-dark anchor-hover text-decoration-none fs-5"
+                                            href="">David Bates</a>
+                                        <small class="text-muted">2 hours ago</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="badge text-danger me-2 fs-6 fw-normal d-none d-md-block">Sold</span>
+                                    <span class="text-Success me-2 fs-6 fw-normal d-none d-md-block">Available</span>
+
+                                    <!-- Post Options Dropdown -->
+                                    <div class="dropdown post-options-dropdown">
+                                        <button class="btn text-muted post-options-btn" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end post-options-menu">
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-bookmark me-2"></i>Save
+                                                </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-eye-slash me-2"></i>Hide
+                                                </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-link-45deg me-2"></i>Copy Link
+                                                </a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-heart me-2"></i>Interested
+                                                </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-heart-fill me-2"></i>Not Interested
+                                                </a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-clock me-2"></i>Snooze User for 30 Days
+                                                </a></li>
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-person-dash me-2"></i>Unfollow User
+                                                </a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a href="#" class="dropdown-item">
+                                                    <i class="bi bi-flag me-2"></i>Report
+                                                </a></li>
+                                            <li><a href="#" class="dropdown-item text-danger">
+                                                    <i class="bi bi-person-x me-2"></i>Block
+                                                </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post Type -->
+                            <div class="post-type mt-2 px-3">
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <i class="bi bi-box-arrow-up-right me-2 text-muted"></i>
+                                    <h6 class="text-muted mb-0 me-2">Post Type:</h6>
+                                    <h6 class="mb-0 text-secondary">Selling</h6>
+                                </div>
+                            </div>
+
+                            <!-- Dog Information Grid -->
+                            <div class="dog-info-grid mb-4 px-3 mt-3">
+                                <div class="row g-3">
+                                    <div class="col-md-12 d-block d-md-none">
+                                        <div class="d-flex justify-content-end align-items-center gap-2">
+                                            <span class="badge text-danger me-2 fs-6 fw-normal ">Sold</span>
+                                            <span class="text-Success me-2 fs-6 fw-normal ">Available</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-heart me-2 text-muted"></i>
+                                                <small class="text-muted">Dog Name</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">Maximus</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-tag me-2 text-muted"></i>
+                                                <small class="text-muted">Breed Name</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">Perro de Presa Mallorquín</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-link-45deg me-2 text-muted"></i>
+                                                <small class="text-muted">Bloodline</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">Royal Bloodline</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-calendar me-2 text-muted"></i>
+                                                <small class="text-muted">Age</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">2 Years</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-currency-dollar me-2 text-muted"></i>
+                                                <small class="text-muted">Price</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">$2,500</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-gender-male me-2 text-muted"></i>
+                                                <small class="text-muted">Gender</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">Male</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-check-circle me-2 text-muted"></i>
+                                                <small class="text-muted">Status</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">Available</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-award me-2 text-muted"></i>
+                                                <small class="text-muted">Registration</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">AKC-123456</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-geo-alt me-2 text-muted"></i>
+                                                <small class="text-muted">City</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">New York</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-map me-2 text-muted"></i>
+                                                <small class="text-muted">State</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">New York</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-globe me-2 text-muted"></i>
+                                                <small class="text-muted">Country</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">United States</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-cash-stack me-2 text-muted"></i>
+                                                <small class="text-muted">Price Per Breeding Cycle</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">$800</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-droplet me-2 text-muted"></i>
+                                                <small class="text-muted">Sticks Per Breeding Cycle</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">2 Sticks</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-currency-dollar me-2 text-muted"></i>
+                                                <small class="text-muted">Price Per 5CC</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">$150</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="info-item">
+                                            <div class="d-flex align-items-start align-items-md-center mb-1">
+                                                <i class="bi bi-clock me-2 text-muted"></i>
+                                                <small class="text-muted">Stored Since</small>
+                                            </div>
+                                            <div class="fw-medium text-dark">January 2024</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Image Carousel -->
+                            <div class="image-carousel mb-2">
+                                <div id="postCarousel" class="carousel slide">
+                                    <div class="carousel-inner rounded-0 bg-black">
+                                        <div class="carousel-item active">
+                                            <img src="../../public/dog.png" class="d-block w-100 carousel-image"
+                                                alt="German Shepherd"
+                                                style="height: 400px; object-fit: contain; cursor: pointer;"
+                                                data-bs-toggle="modal" data-bs-target="#imageModal" data-slide="0">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <video src="../../public/max.mp4" controls autoplay loop
+                                                class="d-block w-100 carousel-image" alt="max video"
+                                                alt="German Shepherd 2"
+                                                style="height: 400px; object-fit: contain; cursor: pointer;"
+                                                data-bs-toggle="modal" data-bs-target="#imageModal" data-slide="1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="../../public/dog.png" class="d-block w-100 carousel-image"
+                                                alt="German Shepherd 3"
+                                                style="height: 400px; object-fit: contain; cursor: pointer;"
+                                                data-bs-toggle="modal" data-bs-target="#imageModal" data-slide="2">
+                                        </div>
+                                    </div>
+
+                                    <!-- Carousel Controls -->
+                                    <div class="d-flex justify-content-center gap-2 mt-2">
+                                        <button class="btn py-1 px-2 fs-6" type="button" data-bs-target="#postCarousel"
+                                            data-bs-slide="prev">
+                                            <i class="bi bi-chevron-left text-dark"></i>
+                                        </button>
+                                        <button class="btn py-1 px-2 fs-6" type="button" data-bs-target="#postCarousel"
+                                            data-bs-slide="next">
+                                            <i class="bi bi-chevron-right text-dark"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Pedigree Link -->
+                            <div class="pedigree-link mb-4 px-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-up-right me-2 text-muted"></i>
+                                    <small class="text-muted me-2">Pedigree Link:</small>
+                                    <a href="#" class="text-primary text-decoration-none">View Full Pedigree</a>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="post-description mb-4 px-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-text-left me-2 text-muted"></i>
+                                    <small class="text-muted">Description</small>
+                                </div>
+                                <div class="description-content position-relative">
+                                    <p class="text-muted mb-0 description-text-truncated" id="description-text">
+                                        This beautiful German Shepherd is well-trained and comes from an excellent
+                                        bloodline. Perfect for families looking for a loyal companion. All vaccinations
+                                        up to date and health certificates provided. Maximus has been professionally
+                                        trained and socialized, making him an ideal family pet. He responds well to
+                                        commands and has a gentle temperament with children.
+                                    </p>
+                                    <span class="text-primary read-more" style="cursor: pointer;"
+                                        onclick="toggleDescription()">... Read More</span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap mb-3 px-3">
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="bi bi-heart-fill text-red fs-5"></i>
+                                    <p class="mb-0 text-muted">Preserving the bullied breed and 100 others</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-chat-dots"></i>
+                                        <p class="mb-0 text-muted">100 comments</p>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="bi bi-share"></i>
+                                        <p class="mb-0 text-muted">20 Shares</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post Footer -->
+                            <div class="post-footer px-3">
+                                <!-- Interaction Icons -->
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn  p-0 border-0 shadow-none outline-none me-3 like-btn"
+                                            data-post="1">
+                                            <i class="bi bi-heart text-muted fs-5"></i>
+                                        </button>
+                                        <button class="btn btn-link p-0 border-0 shadow-none outline-none me-3"
+                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <i class="bi bi-chat text-muted fs-5"></i>
+                                        </button>
+                                        <button class="btn  p-0 border-0 shadow-none outline-none">
+                                            <i class="bi bi-share text-muted fs-5"></i>
+                                        </button>
+                                    </div>
+                                    <button class="btn btn-link p-0 border-0 shadow-none outline-none bookmark-btn"
+                                        data-post="1">
+                                        <i class="bi bi-bookmark text-muted fs-5"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Engagement Stats -->
+                                <div class="d-flex justify-content-end align-items-center mb-3 ">
+                                    <button class="btn text-primary" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop">View all 19 comments</button>
+                                </div>
+
+                                <!-- Comment Input -->
+                                <div class="d-flex align-items-center  mb-3">
+                                    <input type="text" class="form-control form-control-sm rounded-3 me-2"
+                                        placeholder="Add a Comment" style="border: 1px solid #e0e0e0;">
+                                    <button class="btn btn-primary rounded-3 text-white py-2 px-3">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade modal-lg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mx-auto" id="staticBackdropLabel">David Bates's Post</h5>
+                    <button type="button" class="btn-close mx-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="d-flex justify-content-between align-items-start mb-2 p-2">
+                        <div class="d-flex align-items-center">
+                            <img src="../../public/dog.png" alt="Ali Hassan" class="rounded-circle me-3 border"
+                                style="width: 50px; height: 50px; object-fit: cover;">
+                            <div class="d-flex flex-column">
+                                <a class="mb-0 fw-medium text-dark text-decoration-none anchor-hover fs-5" href="">David
+                                    Bates</a>
+                                <small class="text-muted">2 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="dropdown post-options-dropdown">
+                                <button class="btn text-muted post-options-btn" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end post-options-menu">
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-bookmark me-2"></i>Save
+                                        </a></li>
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-eye-slash me-2"></i>Hide
+                                        </a></li>
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-link-45deg me-2"></i>Copy Link
+                                        </a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-heart me-2"></i>Interested
+                                        </a></li>
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-heart-fill me-2"></i>Not Interested
+                                        </a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-clock me-2"></i>Snooze User for 30 Days
+                                        </a></li>
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-person-dash me-2"></i>Unfollow User
+                                        </a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a href="#" class="dropdown-item">
+                                            <i class="bi bi-flag me-2"></i>Report
+                                        </a></li>
+                                    <li><a href="#" class="dropdown-item text-danger">
+                                            <i class="bi bi-person-x me-2"></i>Block
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="post-description mb-4 px-3">
+                        <div class="description-content position-relative">
+                            <p class="text-muted mb-0 description-text-truncated" id="description-text-comments-modal">
+                                This beautiful German Shepherd is well-trained and comes from an excellent bloodline.
+                                Perfect for families looking for a loyal companion. All vaccinations up to date and
+                                health certificates provided. Maximus has been professionally trained and socialized,
+                                making him an ideal family pet. He responds well to commands and has a gentle
+                                temperament with children.
+                            </p>
+                            <span class="text-primary read-more-comments-modal" style="cursor: pointer;"
+                                onclick="toggleDescriptionCommentsModal()">... Read More</span>
+                        </div>
+                    </div>
+                    <div class="image-carousel rounded-0 mb-4">
+                        <div id="postCommentsCarousel" class="carousel slide">
+                            <div class="carousel-inner rounded-0 bg-black">
+                                <div class="carousel-item active">
+                                    <img src="../../public/dog.png" class="d-block w-100 carousel-image"
+                                        alt="German Shepherd"
+                                        style="height: 400px; object-fit: contain; cursor: pointer;"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal" data-slide="0">
+                                </div>
+                                <div class="carousel-item">
+                                    <video src="../../public/max.mp4" controls autoplay loop
+                                        class="d-block w-100 carousel-image" alt="max video"
+                                        style="height: 400px; object-fit: contain; cursor: pointer;"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal" data-slide="1"></video>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../../public/dog.png" class="d-block w-100 carousel-image"
+                                        alt="German Shepherd 3"
+                                        style="height: 400px; object-fit: contain; cursor: pointer;"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal" data-slide="2">
+                                </div>
+                            </div>
+
+                            <!-- Carousel Controls -->
+                            <div class="d-flex justify-content-center gap-2 mt-2">
+                                <button class="btn py-1 px-2 fs-6" type="button" data-bs-target="#postCommentsCarousel"
+                                    data-bs-slide="prev">
+                                    <i class="bi bi-chevron-left text-dark"></i>
+                                </button>
+                                <button class="btn py-1 px-2 fs-6" type="button" data-bs-target="#postCommentsCarousel"
+                                    data-bs-slide="next">
+                                    <i class="bi bi-chevron-right text-dark"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap px-3 mt-2">
+                            <div class="d-flex align-items-center gap-1">
+                                <i class="bi bi-heart-fill text-red fs-5"></i>
+                                <p class="mb-0 text-muted">Preserving the bullied breed and 100 others</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-chat-dots"></i>
+                                    <p class="mb-0 text-muted">100 comments</p>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-share"></i>
+                                    <p class="mb-0 text-muted">20 Shares</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around px-3 mt-2">
+                            <button
+                                class="btn btn-sm py-1 px-2 w-100 justify-content-center border-0 action-btn me-3 d-flex align-items-center gap-2">
+                                <i class="bi bi-heart text-muted fs-5"></i> Like
+                            </button>
+                            <button
+                                class="btn btn-sm py-1 px-2 w-100 justify-content-center border-0 action-btn me-3 d-flex align-items-center gap-2 ">
+                                <i class="bi bi-chat text-muted fs-5"></i> Comment
+                            </button>
+                            <button
+                                class="btn btn-sm py-1 px-2 w-100 justify-content-center border-0 action-btn d-flex align-items-center gap-2">
+                                <i class="bi bi-share text-muted fs-5"></i> Share
+                            </button>
+                        </div>
+                        <div class="mt-3 p-2">
+                            <!-- main comments section -->
+                            <div class="d-flex align-items-start gap-3">
+                                <button class="btn p-0 rounded-circle" title="Profile">
+                                    <img src="../../public/dog.png" alt="Ali Hassan"
+                                        class="rounded-circle object-fit-cover border" width="50px" height="50px">
+                                </button>
+                                <div>
+                                    <div class="bg-light rounded-4 p-2">
+                                        <a href="#"
+                                            class="text-decoration-none text-dark anchor-hover fw-medium fs-6">Ali
+                                            Hassan
+                                            Kaleemi</a>
+                                        <p class="text-muted mb-0">This beautiful German Shepherd is well-trained and
+                                            comes
+                                            from an excellent bloodline. Perfect for families looking for a loyal
+                                            companion.</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-start gap-4">
+                                        <div class="d-flex align-items-end gap-2">
+                                            <span class="text-muted me-auto fw-semibold mb-0 fs-7">1d</span>
+                                            <button
+                                                class="btn p-0 me-auto border-0 bg-none shadow-none outline-none fw-semibold"
+                                                title="Like">
+                                                <span class="fs-7 text-muted">Like</span>
+                                            </button>
+                                            <button
+                                                class="btn p-0 me-auto border-0 bg-none shadow-none outline-none fw-semibold"
+                                                title="Reply">
+                                                <span class="fs-7 text-muted">Reply</span>
+                                            </button>
+                                        </div>
+                                        <i class="bi bi-heart-fill text-red ms-auto fs-5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- comment reply section -->
+                            <div class="d-flex align-items-start gap-3 ps-5 mt-3">
+                                <button class="btn p-0 rounded-circle" title="Profile">
+                                    <img src="../../public/dog.png" alt="Ali Hassan"
+                                        class="rounded-circle object-fit-cover border" width="50px" height="50px">
+                                </button>
+                                <div>
+                                    <div class="bg-light rounded-4 p-2">
+                                        <a href="#"
+                                            class="text-decoration-none text-dark anchor-hover fw-medium fs-6">Ali
+                                            Hassan
+                                            Kaleemi</a>
+                                        <p class="text-muted mb-0">This beautiful German Shepherd is well-trained and
+                                            comes
+                                            from an excellent bloodline. Perfect for families looking for a loyal
+                                            companion.</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-start gap-4">
+                                        <div class="d-flex align-items-end gap-2">
+                                            <span class="text-muted me-auto fw-semibold mb-0 fs-7">1d</span>
+                                            <button
+                                                class="btn p-0 me-auto border-0 bg-none shadow-none outline-none fw-semibold"
+                                                title="Like">
+                                                <span class="fs-7 text-muted">Like</span>
+                                            </button>
+                                            <button
+                                                class="btn p-0 me-auto border-0 bg-none shadow-none outline-none fw-semibold"
+                                                title="Reply">
+                                                <span class="fs-7 text-muted">Reply</span>
+                                            </button>
+                                        </div>
+                                        <i class="bi bi-heart-fill text-red ms-auto fs-5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex align-items-center w-100 justify-content-start gap-3">
+                        <button class="btn p-0 rounded-circle" title="Profile">
+                            <img src="../../public/dog.png" alt="Ali Hassan"
+                                class="rounded-circle object-fit-cover border" width="50px" height="50px">
+                        </button>
+                        <div class="bg-light rounded-4 p-2 w-100">
+                            <div class="d-flex align-items-center justify-content-between gap-2">
+                                <input type="text" class="form-control bg-none shadow-none outline-none border-0 p-0"
+                                    placeholder="Add a comment...">
+                                <button class="btn">
+                                    <i class="bi bi-send text-muted fs-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Edit Details Modal -->
+    <div class="modal fade" id="editDetailsModal" tabindex="-1" aria-labelledby="editDetailsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editDetailsModalLabel">Edit Personal Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="workplace" class="form-label text-muted">Workplace</label>
+                            <input type="text" class="form-control" id="workplace" value="Kaleemi Kennel Club">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="education" class="form-label text-muted">Education</label>
+                            <input type="text" class="form-control" id="education" value="Preston University">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="location" class="form-label text-muted">Location</label>
+                            <input type="text" class="form-control" id="location" value="Karachi, Pakistan">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="favoriteBreed" class="form-label text-muted">Favorite Breed</label>
+                            <select class="form-select" id="favoriteBreed">
+                                <option value="American Pit Bull Terrier" selected>American Pit Bull Terrier</option>
+                                <option value="Affenspinscher">Affenspinscher</option>
+                                <option value="Affenpoo">Affenpoo</option>
+                                <option value="Afghan Hound">Afghan Hound</option>
+                                <option value="Airedale Terrier">Airedale Terrier</option>
+                                <option value="Airedalepoo">Airedalepoo</option>
+                                <option value="Akbash">Akbash</option>
+                                <option value="Akita">Akita</option>
+                                <option value="Alano Español">Alano Español</option>
+                                <option value="Alapaha Blue Blood Bulldog">Alapaha Blue Blood Bulldog</option>
+                                <option value="Alaskan Husky">Alaskan Husky</option>
+                                <option value="Alaskan Malamute">Alaskan Malamute</option>
+                                <option value="Alaskan Klee Kai">Alaskan Klee Kai</option>
+                                <option value="Alopek">Alopek</option>
+                                <option value="American Akita">American Akita</option>
+                                <option value="American Bulldog">American Bulldog</option>
+                                <option value="American Bully">American Bully</option>
+                                <option value="American Cocker Spaniel">American Cocker Spaniel</option>
+                                <option value="American Eskimo Dog">American Eskimo Dog</option>
+                                <option value="American Foxhound">American Foxhound</option>
+                                <option value="American Hairless Terrier">American Hairless Terrier</option>
+                                <option value="American Leopard Hound">American Leopard Hound</option>
+                                <option value="American Staffordshire Terrier">American Staffordshire Terrier</option>
+                                <option value="American Water Spaniel">American Water Spaniel</option>
+                                <option value="Anatolian Shepherd Dog">Anatolian Shepherd Dog</option>
+                                <option value="Appenzeller Sennenhund">Appenzeller Sennenhund</option>
+                                <option value="Ariegeois">Ariegeois</option>
+                                <option value="Artois Hound">Artois Hound</option>
+                                <option value="Aspin (Philippine Native Dog)">Aspin (Philippine Native Dog)</option>
+                                <option value="Australian Cattle Dog">Australian Cattle Dog</option>
+                                <option value="Australian Kelpie">Australian Kelpie</option>
+                                <option value="Australian Shepherd">Australian Shepherd</option>
+                                <option value="Australian Silky Terrier">Australian Silky Terrier</option>
+                                <option value="Australian Terrier">Australian Terrier</option>
+                                <option value="Aussiedoodle">Aussiedoodle</option>
+                                <option value="Aussiepoo">Aussiepoo</option>
+                                <option value="Azawakh">Azawakh</option>
+                                <option value="Badenweiler">Badenweiler</option>
+                                <option value="Basenji">Basenji</option>
+                                <option value="Basset Artesien Normand">Basset Artesien Normand</option>
+                                <option value="Basset Hound">Basset Hound</option>
+                                <option value="Bavarian Mountain Hound">Bavarian Mountain Hound</option>
+                                <option value="Beagle">Beagle</option>
+                                <option value="Beaglier">Beaglier</option>
+                                <option value="Beagapoo">Beagapoo</option>
+                                <option value="Bearded Collie">Bearded Collie</option>
+                                <option value="Bedlington Terrier">Bedlington Terrier</option>
+                                <option value="Belgian Laekenois">Belgian Laekenois</option>
+                                <option value="Belgian Malinois">Belgian Malinois</option>
+                                <option value="Belgian Sheepdog">Belgian Sheepdog</option>
+                                <option value="Belgian Shepherd">Belgian Shepherd</option>
+                                <option value="Belgian Tervuren">Belgian Tervuren</option>
+                                <option value="Bergamasco">Bergamasco</option>
+                                <option value="Berger Picard">Berger Picard</option>
+                                <option value="Bernese Mountain Dog">Bernese Mountain Dog</option>
+                                <option value="Bernedoodle">Bernedoodle</option>
+                                <option value="Bichon Frise">Bichon Frise</option>
+                                <option value="Bichon Bolognese">Bichon Bolognese</option>
+                                <option value="Billy">Billy</option>
+                                <option value="Black and Tan Coonhound">Black and Tan Coonhound</option>
+                                <option value="Black Russian Terrier">Black Russian Terrier</option>
+                                <option value="Bloodhound">Bloodhound</option>
+                                <option value="Bluetick Coonhound">Bluetick Coonhound</option>
+                                <option value="Boerboel">Boerboel</option>
+                                <option value="Bolognese">Bolognese</option>
+                                <option value="Border Collie">Border Collie</option>
+                                <option value="Border Terrier">Border Terrier</option>
+                                <option value="Borzoi">Borzoi</option>
+                                <option value="Boston Terrier">Boston Terrier</option>
+                                <option value="Bouvier des Flandres">Bouvier des Flandres</option>
+                                <option value="Boxer">Boxer</option>
+                                <option value="Boykin Spaniel">Boykin Spaniel</option>
+                                <option value="Bracco Italiano">Bracco Italiano</option>
+                                <option value="Briard">Briard</option>
+                                <option value="Brittany">Brittany</option>
+                                <option value="Broholmer">Broholmer</option>
+                                <option value="Brussels Griffon">Brussels Griffon</option>
+                                <option value="Bucovina Shepherd">Bucovina Shepherd</option>
+                                <option value="Bull Terrier">Bull Terrier</option>
+                                <option value="Bullmastiff">Bullmastiff</option>
+                                <option value="Bulldog">Bulldog</option>
+                                <option value="Bully Kutta">Bully Kutta</option>
+                                <option value="Bullboxer Pit">Bullboxer Pit</option>
+                                <option value="Cairn Terrier">Cairn Terrier</option>
+                                <option value="Canaan Dog">Canaan Dog</option>
+                                <option value="Canadian Eskimo Dog">Canadian Eskimo Dog</option>
+                                <option value="Cane Corso">Cane Corso</option>
+                                <option value="Cardigan Welsh Corgi">Cardigan Welsh Corgi</option>
+                                <option value="Catahoula Leopard Dog">Catahoula Leopard Dog</option>
+                                <option value="Caucasian Shepherd Dog">Caucasian Shepherd Dog</option>
+                                <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
+                                <option value="Central Asian Shepherd Dog">Central Asian Shepherd Dog</option>
+                                <option value="Cesky Terrier">Cesky Terrier</option>
+                                <option value="Chesapeake Bay Retriever">Chesapeake Bay Retriever</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Chinese Crested">Chinese Crested</option>
+                                <option value="Chinese Shar-Pei">Chinese Shar-Pei</option>
+                                <option value="Chinook">Chinook</option>
+                                <option value="Chow Chow">Chow Chow</option>
+                                <option value="Cirneco dell'Etna">Cirneco dell'Etna</option>
+                                <option value="Clumber Spaniel">Clumber Spaniel</option>
+                                <option value="Cockapoo">Cockapoo</option>
+                                <option value="Cocker Spaniel">Cocker Spaniel</option>
+                                <option value="Collie">Collie</option>
+                                <option value="Corgipoo">Corgipoo</option>
+                                <option value="Coton de Tulear">Coton de Tulear</option>
+                                <option value="Curly-Coated Retriever">Curly-Coated Retriever</option>
+                                <option value="Czechoslovakian Wolfdog">Czechoslovakian Wolfdog</option>
+                                <option value="Dachshund">Dachshund</option>
+                                <option value="Dalmatian">Dalmatian</option>
+                                <option value="Dandie Dinmont Terrier">Dandie Dinmont Terrier</option>
+                                <option value="Danish-Swedish Farmdog">Danish-Swedish Farmdog</option>
+                                <option value="Deutscher Wachtelhund">Deutscher Wachtelhund</option>
+                                <option value="Dogo Argentino">Dogo Argentino</option>
+                                <option value="Dogo Canario">Dogo Canario</option>
+                                <option value="Dogue de Bordeaux">Dogue de Bordeaux</option>
+                                <option value="Drentse Patrijshond">Drentse Patrijshond</option>
+                                <option value="Drever">Drever</option>
+                                <option value="Dutch Shepherd">Dutch Shepherd</option>
+                                <option value="Dutch Smoushond">Dutch Smoushond</option>
+                                <option value="Elo">Elo</option>
+                                <option value="English Cocker Spaniel">English Cocker Spaniel</option>
+                                <option value="English Foxhound">English Foxhound</option>
+                                <option value="English Setter">English Setter</option>
+                                <option value="English Shepherd">English Shepherd</option>
+                                <option value="English Springer Spaniel">English Springer Spaniel</option>
+                                <option value="English Toy Spaniel">English Toy Spaniel</option>
+                                <option value="English Water Spaniel">English Water Spaniel</option>
+                                <option value="Entlebucher Mountain Dog">Entlebucher Mountain Dog</option>
+                                <option value="Estrela Mountain Dog">Estrela Mountain Dog</option>
+                                <option value="Eurasier">Eurasier</option>
+                                <option value="Eurohound">Eurohound</option>
+                                <option value="Field Spaniel">Field Spaniel</option>
+                                <option value="Fila Brasileiro">Fila Brasileiro</option>
+                                <option value="Finnish Lapphund">Finnish Lapphund</option>
+                                <option value="Finnish Spitz">Finnish Spitz</option>
+                                <option value="Flat-Coated Retriever">Flat-Coated Retriever</option>
+                                <option value="Fox Terrier (Smooth)">Fox Terrier (Smooth)</option>
+                                <option value="Fox Terrier (Wire)">Fox Terrier (Wire)</option>
+                                <option value="Foxhound">Foxhound</option>
+                                <option value="French Bulldog">French Bulldog</option>
+                                <option value="French Spaniel">French Spaniel</option>
+                                <option value="French Shepherd">French Shepherd</option>
+                                <option value="French Mastiff">French Mastiff</option>
+                                <option value="Galgo Español">Galgo Español</option>
+                                <option value="Galician Sheepdog">Galician Sheepdog</option>
+                                <option value="Giant Schnauzer">Giant Schnauzer</option>
+                                <option value="Glen of Imaal Terrier">Glen of Imaal Terrier</option>
+                                <option value="Glen of Imaal">Glen of Imaal</option>
+                                <option value="German Hound">German Hound</option>
+                                <option value="German Longhaired Pointer">German Longhaired Pointer</option>
+                                <option value="German Pinscher">German Pinscher</option>
+                                <option value="German Shepherd">German Shepherd</option>
+                                <option value="German Shorthaired Pointer">German Shorthaired Pointer</option>
+                                <option value="German Spitz">German Spitz</option>
+                                <option value="German Wirehaired Pointer">German Wirehaired Pointer</option>
+                                <option value="German Shepherd Dog (White)">German Shepherd Dog (White)</option>
+                                <option value="Goldador">Goldador</option>
+                                <option value="Goldendoodle">Goldendoodle</option>
+                                <option value="Golden Retriever">Golden Retriever</option>
+                                <option value="Gordon Setter">Gordon Setter</option>
+                                <option value="Grand Bleu de Gascogne">Grand Bleu de Gascogne</option>
+                                <option value="Great Dane">Great Dane</option>
+                                <option value="Great Pyrenees">Great Pyrenees</option>
+                                <option value="Greater Swiss Mountain Dog">Greater Swiss Mountain Dog</option>
+                                <option value="Greyhound">Greyhound</option>
+                                <option value="Greyster">Greyster</option>
+                                <option value="Griffon Bruxellois">Griffon Bruxellois</option>
+                                <option value="Hamiltonstövare">Hamiltonstövare</option>
+                                <option value="Hanover Hound">Hanover Hound</option>
+                                <option value="Harrier">Harrier</option>
+                                <option value="Havanese">Havanese</option>
+                                <option value="Hokkaido">Hokkaido</option>
+                                <option value="Hovawart">Hovawart</option>
+                                <option value="Husky">Husky</option>
+                                <option value="Icelandic Sheepdog">Icelandic Sheepdog</option>
+                                <option value="Irish Red and White Setter">Irish Red and White Setter</option>
+                                <option value="Irish Setter">Irish Setter</option>
+                                <option value="Irish Terrier">Irish Terrier</option>
+                                <option value="Irish Water Spaniel">Irish Water Spaniel</option>
+                                <option value="Irish Wolfhound">Irish Wolfhound</option>
+                                <option value="Italian Greyhound">Italian Greyhound</option>
+                                <option value="Italian Spinone">Italian Spinone</option>
+                                <option value="Jack Russell Terrier">Jack Russell Terrier</option>
+                                <option value="Jagdtterrier">Jagdtterrier</option>
+                                <option value="Japanese Chin">Japanese Chin</option>
+                                <option value="Japanese Spitz">Japanese Spitz</option>
+                                <option value="Japanese Terrier">Japanese Terrier</option>
+                                <option value="Jindo">Jindo</option>
+                                <option value="Kai Ken">Kai Ken</option>
+                                <option value="Kangal">Kangal</option>
+                                <option value="Karabash">Karabash</option>
+                                <option value="Karst Shepherd">Karst Shepherd</option>
+                                <option value="Keeshond">Keeshond</option>
+                                <option value="Kerry Blue Terrier">Kerry Blue Terrier</option>
+                                <option value="Kangal Dog">Kangal Dog</option>
+                                <option value="Kangal (Anatolian variant)">Kangal (Anatolian variant)</option>
+                                <option value="Komondor">Komondor</option>
+                                <option value="Kooikerhondje">Kooikerhondje</option>
+                                <option value="Korean Jindo">Korean Jindo</option>
+                                <option value="Kromfohrlander">Kromfohrlander</option>
+                                <option value="Kuvasz">Kuvasz</option>
+                                <option value="Lagotto Romagnolo">Lagotto Romagnolo</option>
+                                <option value="Lakeland Terrier">Lakeland Terrier</option>
+                                <option value="Lhasa Apso">Lhasa Apso</option>
+                                <option value="Labradoodle">Labradoodle</option>
+                                <option value="Labrador Retriever">Labrador Retriever</option>
+                                <option value="Lagotto">Lagotto</option>
+                                <option value="Leonberger">Leonberger</option>
+                                <option value="Lurcher">Lurcher</option>
+                                <option value="Lithuanian Hound">Lithuanian Hound</option>
+                                <option value="Lowchen">Lowchen</option>
+                                <option value="Manchester Terrier">Manchester Terrier</option>
+                                <option value="Maltese">Maltese</option>
+                                <option value="Maltipoo">Maltipoo</option>
+                                <option value="Maremma Sheepdog">Maremma Sheepdog</option>
+                                <option value="Miniature Bull Terrier">Miniature Bull Terrier</option>
+                                <option value="Miniature Pinscher">Miniature Pinscher</option>
+                                <option value="Miniature Schnauzer">Miniature Schnauzer</option>
+                                <option value="Miniature Poodle">Miniature Poodle</option>
+                                <option value="Mix">Mix</option>
+                                <option value="Mountain Cur">Mountain Cur</option>
+                                <option value="Mudhol Hound">Mudhol Hound</option>
+                                <option value="Neapolitan Mastiff">Neapolitan Mastiff</option>
+                                <option value="Newfoundland">Newfoundland</option>
+                                <option value="Norfolk Terrier">Norfolk Terrier</option>
+                                <option value="Norwegian Buhund">Norwegian Buhund</option>
+                                <option value="Norwegian Elkhound">Norwegian Elkhound</option>
+                                <option value="Norwegian Lundehund">Norwegian Lundehund</option>
+                                <option value="Norwich Terrier">Norwich Terrier</option>
+                                <option value="Nova Scotia Duck Tolling Retriever">Nova Scotia Duck Tolling Retriever
+                                </option>
+                                <option value="Old English Sheepdog">Old English Sheepdog</option>
+                                <option value="Otterhound">Otterhound</option>
+                                <option value="Papillon">Papillon</option>
+                                <option value="Parson Russell Terrier">Parson Russell Terrier</option>
+                                <option value="Pekingese">Pekingese</option>
+                                <option value="Perro de Presa Canario">Perro de Presa Canario</option>
+                                <option value="Perro de Presa Mallorquin">Perro de Presa Mallorquin</option>
+                                <option value="Persian Shepherd">Persian Shepherd</option>
+                                <option value="Pharaoh Hound">Pharaoh Hound</option>
+                                <option value="Pitsky">Pitsky</option>
+                                <option value="Plott Hound">Plott Hound</option>
+                                <option value="Podenco Canario">Podenco Canario</option>
+                                <option value="Pointer">Pointer</option>
+                                <option value="Polish Lowland Sheepdog">Polish Lowland Sheepdog</option>
+                                <option value="Pomeranian">Pomeranian</option>
+                                <option value="Pomsky">Pomsky</option>
+                                <option value="Poodle">Poodle</option>
+                                <option value="Porcelaine">Porcelaine</option>
+                                <option value="Portuguese Podengo">Portuguese Podengo</option>
+                                <option value="Portuguese Water Dog">Portuguese Water Dog</option>
+                                <option value="Posavac Hound">Posavac Hound</option>
+                                <option value="Presa Canario">Presa Canario</option>
+                                <option value="Pug">Pug</option>
+                                <option value="Puggle">Puggle</option>
+                                <option value="Pumi">Pumi</option>
+                                <option value="Pyrenean Mastiff">Pyrenean Mastiff</option>
+                                <option value="Pyrenean Shepherd">Pyrenean Shepherd</option>
+                                <option value="Quinlan Terrier">Quinlan Terrier</option>
+                                <option value="Redbone Coonhound">Redbone Coonhound</option>
+                                <option value="Rhodesian Ridgeback">Rhodesian Ridgeback</option>
+                                <option value="Rottweiler">Rottweiler</option>
+                                <option value="Romanian Mioritic Shepherd">Romanian Mioritic Shepherd</option>
+                                <option value="Rafeiro do Alentejo">Rafeiro do Alentejo</option>
+                                <option value="Saint Bernard">Saint Bernard</option>
+                                <option value="Saluki">Saluki</option>
+                                <option value="Samoyed">Samoyed</option>
+                                <option value="Schapendoes">Schapendoes</option>
+                                <option value="Schipperke">Schipperke</option>
+                                <option value="Schnauzer">Schnauzer</option>
+                                <option value="Schweizer Laufhund">Schweizer Laufhund</option>
+                                <option value="Scottish Deerhound">Scottish Deerhound</option>
+                                <option value="Scottish Terrier">Scottish Terrier</option>
+                                <option value="Sealyham Terrier">Sealyham Terrier</option>
+                                <option value="Segugio Italiano">Segugio Italiano</option>
+                                <option value="Seppala Siberian Sleddog">Seppala Siberian Sleddog</option>
+                                <option value="Shar Pei">Shar Pei</option>
+                                <option value="Sheepadoodle">Sheepadoodle</option>
+                                <option value="Sheltie">Sheltie</option>
+                                <option value="Shetland Sheepdog">Shetland Sheepdog</option>
+                                <option value="Shiba Inu">Shiba Inu</option>
+                                <option value="Shih Tzu">Shih Tzu</option>
+                                <option value="Shikoku">Shikoku</option>
+                                <option value="Siberian Husky">Siberian Husky</option>
+                                <option value="Silky Terrier">Silky Terrier</option>
+                                <option value="Skye Terrier">Skye Terrier</option>
+                                <option value="Sloughi">Sloughi</option>
+                                <option value="Slovakian Rough-haired Pointer">Slovakian Rough-haired Pointer</option>
+                                <option value="Small Munsterlander">Small Munsterlander</option>
+                                <option value="Smooth Fox Terrier">Smooth Fox Terrier</option>
+                                <option value="Soft Coated Wheaten Terrier">Soft Coated Wheaten Terrier</option>
+                                <option value="Spanish Water Dog">Spanish Water Dog</option>
+                                <option value="Spinone Italiano">Spinone Italiano</option>
+                                <option value="Stabyhoun">Stabyhoun</option>
+                                <option value="Staffordshire Bull Terrier">Staffordshire Bull Terrier</option>
+                                <option value="Standard Poodle">Standard Poodle</option>
+                                <option value="Standard Schnauzer">Standard Schnauzer</option>
+                                <option value="Sussex Spaniel">Sussex Spaniel</option>
+                                <option value="Swedish Vallhund">Swedish Vallhund</option>
+                                <option value="Terrier Brasileiro">Terrier Brasileiro</option>
+                                <option value="Thai Ridgeback">Thai Ridgeback</option>
+                                <option value="Tibetan Mastiff">Tibetan Mastiff</option>
+                                <option value="Tibetan Spaniel">Tibetan Spaniel</option>
+                                <option value="Tibetan Terrier">Tibetan Terrier</option>
+                                <option value="Toy Fox Terrier">Toy Fox Terrier</option>
+                                <option value="Treeing Walker Coonhound">Treeing Walker Coonhound</option>
+                                <option value="Vizsla">Vizsla</option>
+                                <option value="Weimaraner">Weimaraner</option>
+                                <option value="Welsh Springer Spaniel">Welsh Springer Spaniel</option>
+                                <option value="Welsh Terrier">Welsh Terrier</option>
+                                <option value="Welsh Corgi (Pembroke)">Welsh Corgi (Pembroke)</option>
+                                <option value="Welsh Corgi (Cardigan)">Welsh Corgi (Cardigan)</option>
+                                <option value="West Highland White Terrier">West Highland White Terrier</option>
+                                <option value="Wheaten Terrier">Wheaten Terrier</option>
+                                <option value="Whippet">Whippet</option>
+                                <option value="White Shepherd">White Shepherd</option>
+                                <option value="Wire Fox Terrier">Wire Fox Terrier</option>
+                                <option value="Wirehaired Pointing Griffon">Wirehaired Pointing Griffon</option>
+                                <option value="Xoloitzcuintli">Xoloitzcuintli</option>
+                                <option value="Yakutian Laika">Yakutian Laika</option>
+                                <option value="Yorkshire Terrier">Yorkshire Terrier</option>
+                                <option value="Yorkipoo">Yorkipoo</option>
+                                <option value="Zuchon">Zuchon</option>
+                                <option value="Affenhuahua">Affenhuahua</option>
+                                <option value="Alaskan Laika">Alaskan Laika</option>
+                                <option value="American Staghound">American Staghound</option>
+                                <option value="Anjing Kampung">Anjing Kampung</option>
+                                <option value="Armant">Armant</option>
+                                <option value="Australian Staghound">Australian Staghound</option>
+                                <option value="Australian Shepherd (Miniature)">Australian Shepherd (Miniature)</option>
+                                <option value="Azawak">Azawak</option>
+                                <option value="Bakharwal">Bakharwal</option>
+                                <option value="Banjara Hound">Banjara Hound</option>
+                                <option value="Banjara">Banjara</option>
+                                <option value="Bhutia">Bhutia</option>
+                                <option value="Bhotia">Bhotia</option>
+                                <option value="Caucasian Ovcharka">Caucasian Ovcharka</option>
+                                <option value="Indian Pariah Dog">Indian Pariah Dog</option>
+                                <option value="Kombai">Kombai</option>
+                                <option value="Gaddi Kutta">Gaddi Kutta</option>
+                                <option value="Gaddi">Gaddi</option>
+                                <option value="Giant Spitz">Giant Spitz</option>
+                                <option value="Gaddi Kutta (Himachal)">Gaddi Kutta (Himachal)</option>
+                                <option value="Kanni">Kanni</option>
+                                <option value="Rajapalayam">Rajapalayam</option>
+                                <option value="Chippiparai">Chippiparai</option>
+                                <option value="Jonangi">Jonangi</option>
+                                <option value="Rampur Greyhound">Rampur Greyhound</option>
+                                <option value="Bhil">Bhil</option>
+                                <option value="Chortai">Chortai</option>
+                                <option value="Tazy">Tazy</option>
+                                <option value="Askal">Askal</option>
+                                <option value="Phu Quoc Ridgeback">Phu Quoc Ridgeback</option>
+                                <option value="Kintamani">Kintamani</option>
+                                <option value="Chinook (US)">Chinook (US)</option>
+                                <option value="Sulimov Dog">Sulimov Dog</option>
+                                <option value="Mudhol">Mudhol</option>
+                                <option value="Chien-gris">Chien-gris</option>
+                                <option value="Kurilian Bobtail (Dog)">Kurilian Bobtail (Dog)</option>
+                                <option value="American English Coonhound">American English Coonhound</option>
+                                <option value="Transylvanian Hound">Transylvanian Hound</option>
+                                <option value="Old Croatian Sheepdog">Old Croatian Sheepdog</option>
+                                <option value="Slovensky Cuvac">Slovensky Cuvac</option>
+                                <option value="Istrian Shorthaired Hound">Istrian Shorthaired Hound</option>
+                                <option value="Istrian Coarse-haired Hound">Istrian Coarse-haired Hound</option>
+                                <option value="Dalbo dog">Dalbo dog</option>
+                                <option value="Caucasian Shepherd">Caucasian Shepherd</option>
+                                <option value="Greek Harehound">Greek Harehound</option>
+                                <option value="Hellenic Hound">Hellenic Hound</option>
+                                <option value="Hellenic Shepherd">Hellenic Shepherd</option>
+                                <option value="Cyprus Paphos Hound">Cyprus Paphos Hound</option>
+                                <option value="Thai Bangkaew">Thai Bangkaew</option>
+                                <option value="Tornjak">Tornjak</option>
+                                <option value="Tosa Inu">Tosa Inu</option>
+                                <option value="Utonagan">Utonagan</option>
+                                <option value="Volpino Italiano">Volpino Italiano</option>
+                                <option value="Wirehaired Vizsla">Wirehaired Vizsla</option>
+                                <option value="St. John's water dog">St. John's water dog</option>
+                                <option value="English Water Dog">English Water Dog</option>
+                                <option value="Japanese Hounds">Japanese Hounds</option>
+                                <option value="Karelian Bear Dog">Karelian Bear Dog</option>
+                                <option value="Karakachan Dog">Karakachan Dog</option>
+                                <option value="Cimarron Uruguayo">Cimarron Uruguayo</option>
+                                <option value="Dogo Sardesco">Dogo Sardesco</option>
+                                <option value="Cao de Castro Laboreiro">Cao de Castro Laboreiro</option>
+                                <option value="Portuguese Sheepdog">Portuguese Sheepdog</option>
+                                <option value="Sapsali">Sapsali</option>
+                                <option value="Teddy Roosevelt Terrier">Teddy Roosevelt Terrier</option>
+                                <option value="Pudelpointer">Pudelpointer</option>
+                                <option value="Cesky Fousek">Cesky Fousek</option>
+                                <option value="Slovak Cuvac">Slovak Cuvac</option>
+                                <option value="Cretan Hound">Cretan Hound</option>
+                                <option value="Gos d'Atura Català">Gos d'Atura Català</option>
+                                <option value="Istrian Hound">Istrian Hound</option>
+                                <option value="Saarloos Wolfdog">Saarloos Wolfdog</option>
+                                <option value="Sulimov">Sulimov</option>
+                                <option value="Thai Bangkaew Dog">Thai Bangkaew Dog</option>
+                                <option value="Tibetan Kyi Apso">Tibetan Kyi Apso</option>
+                                <option value="Tosa">Tosa</option>
+                                <option value="Korean Mastiff">Korean Mastiff</option>
+                                <option value="Kangal (Anatolian Shepherd)">Kangal (Anatolian Shepherd)</option>
+                                <option value="Bulldog (Victorian)">Bulldog (Victorian)</option>
+                                <option value="Bulldog (Olde English)">Bulldog (Olde English)</option>
+                                <option value="Bullypit">Bullypit</option>
+                                <option value="Catahoula Cur">Catahoula Cur</option>
+                                <option value="Feist">Feist</option>
+                                <option value="Plummer Terrier">Plummer Terrier</option>
+                                <option value="Barbet">Barbet</option>
+                                <option value="Portuguese Pointer">Portuguese Pointer</option>
+                                <option value="Peruvian Inca Orchid">Peruvian Inca Orchid</option>
+                                <option value="Caucasian Shepherd Dog (Ovcharka)">Caucasian Shepherd Dog (Ovcharka)
+                                </option>
+                                <option value="Boerboel (South African Mastiff)">Boerboel (South African Mastiff)
+                                </option>
+                                <option value="Chien Français Blanc et Noir">Chien Français Blanc et Noir</option>
+                                <option value="Chien Français Blanc et Orange">Chien Français Blanc et Orange</option>
+                                <option value="Chien Français Tricolore">Chien Français Tricolore</option>
+                                <option value="Dunker">Dunker</option>
+                                <option value="Finnish Hound">Finnish Hound</option>
+                                <option value="Illyrian Sheepdog">Illyrian Sheepdog</option>
+                                <option value="Barak">Barak</option>
+                                <option value="Presa Mallorquin">Presa Mallorquin</option>
+                                <option value="Giant Mountain Dog">Giant Mountain Dog</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-muted">Relationship Status</label>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="relationship" id="single"
+                                        value="single">
+                                    <label class="form-check-label" for="single">Single</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="relationship" id="engaged"
+                                        value="engaged" checked>
+                                    <label class="form-check-label" for="engaged">Engaged</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="relationship" id="married"
+                                        value="married">
+                                    <label class="form-check-label" for="married">Married</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="relationship" id="divorced"
+                                        value="divorced">
+                                    <label class="form-check-label" for="divorced">Divorced</label>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-6">
+                            <label class="form-label text-muted">Are you a breeder or a fancier?</label>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="profession" id="breeder"
+                                        value="breeder" checked>
+                                    <label class="form-check-label" for="breeder">Dog Breeder</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="profession" id="fancier"
+                                        value="fancier">
+                                    <label class="form-check-label" for="fancier">Dog Fancier</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-white fw-medium px-4 py-2 rounded-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary text-white fw-medium px-4 py-2 rounded-2" onclick="saveDetails()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Social Media Modal -->
+    <div class="modal fade" id="editSocialModal" tabindex="-1" aria-labelledby="editSocialModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editSocialModalLabel">Edit Social Media Links</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="website" class="form-label">Website</label>
+                        <input type="url" class="form-control" id="website" value="https://kaleemikennels.com"
+                            placeholder="https://yourwebsite.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="facebook" class="form-label">Facebook</label>
+                        <input type="url" class="form-control" id="facebook" value="https://facebook.com/kaleemikennels"
+                            placeholder="https://facebook.com/yourpage">
+                    </div>
+                    <div class="mb-3">
+                        <label for="instagram" class="form-label">Instagram</label>
+                        <input type="url" class="form-control" id="instagram"
+                            value="https://instagram.com/kaleemikennels"
+                            placeholder="https://instagram.com/yourprofile">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-white fw-medium px-4 py-2 rounded-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary text-white fw-medium px-4 py-2 rounded-2" onclick="saveSocialMedia()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+</body>
+
+</html>

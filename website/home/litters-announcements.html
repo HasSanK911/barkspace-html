@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litters Annoucements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/style.scss">
+</head>
+<body>
+    <header class="header bg-white border-bottom position-sticky top-0 z-10 shadow-sm">
+        <div class="header-container w-100 px-4 d-flex align-items-center justify-content-between">
+            <div class="header-left d-flex align-items-center">
+                <button class="btn  btn-sm d-block d-xl-none p-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18"></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M3 18h18"></path>
+                    </svg>
+                </button>
+                <a href="./homepage.html" class="logo d-flex align-items-center text-decoration-none d-none d-md-block">
+                    <img src="../../public/Logo.svg" alt="logo" class="w-50">
+                </a>
+                <a href="./homepage.html" class="logo d-flex align-items-center text-decoration-none d-block d-md-none">
+                    <img src="../../public/smalllogo.svg" alt="logo" class="w-75">
+                </a>
+            </div>
+            <div class="header-right d-flex align-items-center gap-3">
+                <div class="nav-items d-flex align-items-center gap-2">
+                    <a href="#"
+                        class="nav-item position-relative d-flex align-items-center justify-content-center rounded-3"
+                        title="Messages">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span class="notification-dot bg-danger rounded-circle"></span>
+                    </a>
+
+                    <a href="#"
+                        class="nav-item position-relative d-flex align-items-center justify-content-center rounded-3"
+                        title="Notifications">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span
+                            class="notification-badge position-absolute d-flex align-items-center justify-content-center fw-semibold text-white">3</span>
+                    </a>
+
+                </div>
+                <div class="profile-menu position-relative mx-3 dropdown">
+                    <button
+                        class="profile-btn border-0 bg-none p-2 rounded-circle dropdown-toggle d-flex align-items-center gap-2 bg-white"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="profile-avatar position-relative rounded-circle overflow-hidden">
+                            <div class="avatar-ring position-absolute bg-primary rounded-circle"></div>
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                                alt="Profile" class="profile-img rounded-circle w-100 h-100 object-fit-cover">
+                        </div>
+                    </button>
+                    <ul
+                        class="dropdown-menu dropdown-menu-end position-absolute right-0 mt-3 rounded-4 py-3 px-0 list-unstyled z-10 overflow-hidden d-none">
+                        <li class="dropdown-header py-3 px-4 border-bottom mb-3">
+                            <div class="user-info d-flex align-items-center gap-3">
+                                <div class="user-avatar rounded-circle overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                                        alt="Profile" class="w-100 h-100 object-fit-cover">
+                                </div>
+                                <div class="user-details">
+                                    <a href="#" class="user-name text-decoration-none fw-semibold text-dark fs-6">John
+                                        Doe</a>
+                                    <div class="user-email text-muted fs-6">john@dogsdale.com</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium">
+                                <i class="bi bi-person fs-6"></i>
+                                Profile
+                            </a></li>
+                        <li><a href="#"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium">
+                                <i class="bi bi-gear fs-6"></i>
+                                Settings
+                            </a></li>
+                        <li>
+                            <hr class="dropdown-divider my-2 border-0">
+                        </li>
+                        <li><a href="../auth/login.html"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium logout">
+                                <i class="bi bi-box-arrow-right fs-6"></i>
+                                Logout
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12">
+                <div class="my-3">
+                    <h2 class="text-center">Litter Announcements</h2>
+                    <h4 class="text-muted fw-normal text-center">Litters announced by the kennels you follow</h4>
+                </div>
+                <div class="bg-white rounded-3 border my-3" id="litters-filters">
+                    <div class="accordion-header p-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#littersFiltersCollapse" aria-expanded="false" aria-controls="littersFiltersCollapse" style="cursor: pointer;">
+                        <h4 class="fw-medium mb-0 text-secondary">
+                            <i class="bi bi-funnel"></i> Filter by
+                        </h4>
+                        <i class="bi bi-chevron-down filter-toggle-icon" id="littersFilterToggleIcon"></i>
+                    </div>
+                    <div class="collapse" id="littersFiltersCollapse">
+                        <div class="p-3 pt-0">
+                            <div class="row">
+                                <div class="mb-3 col-md-4">
+                                    <label for="kennelSelect" class="form-label text-muted">Kennel</label>
+                                    <select id="kennelSelect" class="form-select">
+                                        <option value="">Select Kennel</option>
+                                        <option value="1">Buck Bred Kennels</option>
+                                        <option value="2">Machobuck Kennels</option>
+                                        <option value="3">Do Or Die Kennels</option>
+                                        <option value="4">Golden Paws Kennels</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label for="breedSelect" class="form-label text-muted">Breed</label>
+                                    <select id="breedSelect" class="form-select">
+                                        <option value="">Select Breed</option>
+                                        <option value="1">American pitbull terrier</option>
+                                        <option value="2">German shepherd</option>
+                                        <option value="3">Golden retriever</option>
+                                        <option value="4">Labrador retriever</option>
+                                        <option value="5">Bulldog</option>
+                                        <option value="6">Rottweiler</option>
+                                        <option value="7">Poodle</option>
+                                        <option value="8">Beagle</option>
+                                        <option value="9">Dachshund</option>
+                                        <option value="10">Shih tzu</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label for="locationSelect" class="form-label text-muted">Location</label>
+                                    <select id="locationSelect" class="form-select">
+                                        <option value="">Select Location</option>
+                                        <option value="1">United States</option>
+                                        <option value="2">Canada</option>
+                                        <option value="3">United Kingdom</option>
+                                        <option value="4">Australia</option>
+                                        <option value="5">New Zealand</option>
+                                        <option value="6">South Africa</option>
+                                        <option value="7">India</option>
+                                        <option value="8">Pakistan</option>
+                                        <option value="9">Bangladesh</option>
+                                        <option value="10">Sri Lanka</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="d-flex justify-content-between flex-column flex-md-row align-items-end align-items-md-center gap-3">
+                                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                                            <div class="badge bg-light text-muted rounded-pill px-3 py-2 fs-6 fw-medium">
+                                                Buck Bred Kennels
+                                            </div>
+                                            <div class="badge bg-light text-muted rounded-pill px-3 py-2 fs-6 fw-medium">
+                                                American Pitbull Terrier
+                                            </div>
+                                            <div class="badge bg-light text-muted rounded-pill px-3 py-2 fs-6 fw-medium">
+                                                America
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <button class="btn px-4 text-white mt-3 flex-nowrap text-nowrap btn-primary"><i class="bi bi-funnel"></i> Filter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterone.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Buck Bred Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/littertwo.jpeg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Machobuck Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterthree.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Do Or Die Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterone.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Buck Bred Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/littertwo.jpeg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Machobuck Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterthree.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Do Or Die Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterone.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Buck Bred Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/littertwo.jpeg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Machobuck Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterthree.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Do Or Die Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterone.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Buck Bred Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/littertwo.jpeg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Machobuck Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterthree.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Do Or Die Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterone.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Buck Bred Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/littertwo.jpeg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Machobuck Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterthree.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Do Or Die Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterone.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Buck Bred Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/littertwo.jpeg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Machobuck Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterthree.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Do Or Die Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterone.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Buck Bred Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/littertwo.jpeg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Machobuck Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                            <div class="kennel-card bg-white rounded-3 shadow-sm h-100">
+                                <div class="d-flex mb-3 flex-column ">
+                                    <img src="../../public/litterthree.jpg" alt="Golden Paws Kennel" class="rounded-top-3 object-fit-cover border w-100" height="250px" >
+                                    <div class="p-2 bg-white d-flex flex-column mt-2">
+                                        <a href="#" class="mb-1 fw-semibold text-center text-dark anchor-hover fs-5 text-decoration-none">Do Or Die Kennels</a>
+                                        <p class="text-muted text-center mb-0">Specializes in American Pitbull Terrier</p>
+                                        <div class="text-dark fw-medium mt-2">
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Sire : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Machobred</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Dam : <a href="" class="text-decoration-none text-dark anchor-hover">Buck Bred Kennel's Akira</a> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Puppies : <div class="text-dark">2 Male, 2 Female</div> 
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2 text-dark">
+                                                Price: <div class="text-dark">$2,500 each puppy</div>
+                                            </div>
+                                            <div>
+                                               <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26" target="_blank" class="text-decoration-none text-primary anchor-hover text-wrap">https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=26</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+</body>
+</html>

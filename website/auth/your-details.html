@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/style.scss">
+</head>
+<body>
+
+    <main class="">
+
+        <section id="login" class="min-vh-100 d-flex flex-column py-3 align-items-center justify-content-center auth">
+            <div class="d-flex justify-content-center mb-3">
+                <img src="../../public/Logo.svg" alt="" class="w-75">
+            </div>
+            <div class="d-flex align-items-center justify-content-center w-100 select2-container">
+                <div class="d-flex flex-column align-items-center justify-content-center px-3 py-4 w-880 bg-white p-3 rounded-4 border"
+                    id="login-form">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <h2 class="text-center">Your Details</h2>
+                        <p class="text-center fw-normal">Please enter you details</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center mb-3">
+                        <div class="avatar-wrapper position-relative">
+                            <img id="profilePreview" class="avatar rounded-circle" src="" alt="Profile preview">
+                            <span class="avatar-placeholder d-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+                                <i class="bi bi-person-fill fs-2 text-muted"></i>
+                            </span>
+                            <label for="profileInput" class="avatar-action d-flex align-items-center justify-content-center" aria-label="Upload profile picture">
+                                <i class="bi bi-camera"></i>
+                            </label>
+                            <input id="profileInput" type="file" accept="image/*" class="d-none">
+                        </div>
+                    </div>
+                    <div class="row mt-4 w-100">
+                        <div class="col-md-12 mb-3">
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="firstname" class="text-muted mb-2">First Name</label>
+                            <input type="text" class="form-control p-2" id="firstname"
+                                placeholder="Enter your firstname">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastname" class="text-muted mb-2">Last Name</label>
+                            <input type="text" class="form-control p-2" id="lastname"
+                                placeholder="Enter your lastname">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="dateofbirth" class="text-muted mb-2">Date of Birth</label>
+                            <input type="date" class="form-control p-2" id="dateofbirth">
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="phonenumber" class="text-muted mb-2">Phone Number</label>
+                            <div class="row g-2">
+                                <div class="col-5 col-md-4">
+                                    <select id="countryCodeSelect" class="form-select">
+                                        <option></option>
+                                        <option value="+1" data-iso="US">United States (+1)</option>
+                                        <option value="+1" data-iso="CA">Canada (+1)</option>
+                                        <option value="+44" data-iso="GB">United Kingdom (+44)</option>
+                                        <option value="+61" data-iso="AU">Australia (+61)</option>
+                                        <option value="+91" data-iso="IN">India (+91)</option>
+                                        <option value="+92" data-iso="PK">Pakistan (+92)</option>
+                                        <option value="+880" data-iso="BD">Bangladesh (+880)</option>
+                                        <option value="+234" data-iso="NG">Nigeria (+234)</option>
+                                        <option value="+254" data-iso="KE">Kenya (+254)</option>
+                                        <option value="+20" data-iso="EG">Egypt (+20)</option>
+                                        <option value="+27" data-iso="ZA">South Africa (+27)</option>
+                                        <option value="+971" data-iso="AE">United Arab Emirates (+971)</option>
+                                        <option value="+966" data-iso="SA">Saudi Arabia (+966)</option>
+                                        <option value="+86" data-iso="CN">China (+86)</option>
+                                        <option value="+81" data-iso="JP">Japan (+81)</option>
+                                        <option value="+82" data-iso="KR">South Korea (+82)</option>
+                                        <option value="+49" data-iso="DE">Germany (+49)</option>
+                                        <option value="+33" data-iso="FR">France (+33)</option>
+                                        <option value="+34" data-iso="ES">Spain (+34)</option>
+                                        <option value="+39" data-iso="IT">Italy (+39)</option>
+                                        <option value="+31" data-iso="NL">Netherlands (+31)</option>
+                                        <option value="+46" data-iso="SE">Sweden (+46)</option>
+                                        <option value="+47" data-iso="NO">Norway (+47)</option>
+                                        <option value="+45" data-iso="DK">Denmark (+45)</option>
+                                        <option value="+358" data-iso="FI">Finland (+358)</option>
+                                        <option value="+7" data-iso="RU">Russia (+7)</option>
+                                        <option value="+90" data-iso="TR">Turkey (+90)</option>
+                                        <option value="+98" data-iso="IR">Iran (+98)</option>
+                                        <option value="+55" data-iso="BR">Brazil (+55)</option>
+                                        <option value="+54" data-iso="AR">Argentina (+54)</option>
+                                        <option value="+52" data-iso="MX">Mexico (+52)</option>
+                                    </select>
+                                </div>
+                                <div class="col-7 col-md-8">
+                                    <input type="text" class="form-control p-2" id="phonenumber" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="biography" class="text-muted mb-2">Biography</label>
+                            <textarea type="text" name="" id="biography" class="form-control h-auto p-2" rows="5" placeholder="Enter something about yourself and your dog"></textarea>
+                            <p class="text-danger mb-0">Please fill all your required information to create your account, so that we can personalized your experience with us.</p>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <a href="./add-address.html"
+                                    class="px-5 rounded-pill py-2 bg-primary text-white text-decoration-none fs-5">Save and Next</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+</body>
+</html>

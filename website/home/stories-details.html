@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/src/style.scss">
+</head>
+
+<body>
+
+    <header class="header bg-white border-bottom position-sticky top-0 z-10 shadow-sm">
+        <div class="header-container w-100 px-4 d-flex align-items-center justify-content-between">
+            <div class="header-left d-flex align-items-center">
+                <button class="btn  btn-sm d-block d-xl-none p-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18"></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M3 18h18"></path>
+                    </svg>
+                </button>
+                <a href="./homepage.html" class="logo d-flex align-items-center text-decoration-none d-none d-md-block">
+                    <img src="../../public/Logo.svg" alt="logo" class="w-50">
+                </a>
+                <a href="./homepage.html" class="logo d-flex align-items-center text-decoration-none d-block d-md-none">
+                    <img src="../../public/smalllogo.svg" alt="logo" class="w-75">
+                </a>
+            </div>
+            <div class="header-right d-flex align-items-center gap-3">
+                <div class="nav-items d-flex align-items-center gap-2">
+                    <a href="#"
+                        class="nav-item position-relative d-flex align-items-center justify-content-center rounded-3"
+                        title="Messages">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span class="notification-dot bg-danger rounded-circle"></span>
+                    </a>
+
+                    <a href="#"
+                        class="nav-item position-relative d-flex align-items-center justify-content-center rounded-3"
+                        title="Notifications">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span
+                            class="notification-badge position-absolute d-flex align-items-center justify-content-center fw-semibold text-white">3</span>
+                    </a>
+
+                </div>
+                <div class="profile-menu position-relative mx-3 dropdown">
+                    <button
+                        class="profile-btn border-0 bg-none p-2 rounded-circle dropdown-toggle d-flex align-items-center gap-2 bg-white"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="profile-avatar position-relative rounded-circle overflow-hidden">
+                            <div class="avatar-ring position-absolute bg-primary rounded-circle"></div>
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                                alt="Profile" class="profile-img rounded-circle w-100 h-100 object-fit-cover">
+                        </div>
+                    </button>
+                    <ul
+                        class="dropdown-menu dropdown-menu-end position-absolute right-0 mt-3 rounded-4 py-3 px-0 list-unstyled z-10 overflow-hidden d-none">
+                        <li class="dropdown-header py-3 px-4 border-bottom mb-3">
+                            <div class="user-info d-flex align-items-center gap-3">
+                                <div class="user-avatar rounded-circle overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                                        alt="Profile" class="w-100 h-100 object-fit-cover">
+                                </div>
+                                <div class="user-details">
+                                    <a href="#" class="user-name text-decoration-none fw-semibold text-dark fs-6">John
+                                        Doe</a>
+                                    <div class="user-email text-muted fs-6">john@dogsdale.com</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium">
+                                <i class="bi bi-person fs-6"></i>
+                                Profile
+                            </a></li>
+                        <li><a href="#"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium">
+                                <i class="bi bi-gear fs-6"></i>
+                                Settings
+                            </a></li>
+                        <li>
+                            <hr class="dropdown-divider my-2 border-0">
+                        </li>
+                        <li><a href="../auth/login.html"
+                                class="dropdown-link d-flex align-items-center gap-3 w-100 px-4 py-3 text-decoration-none fw-medium logout">
+                                <i class="bi bi-box-arrow-right fs-6"></i>
+                                Logout
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="">
+                <div class=" py-4">
+                    <h2 class="text-center">Crenshaw's Champion Jeep 4xw ROM</h2>
+                    <img src="../../public/jeep.jpg" alt="Champion Jeep 4xw ROM" class="w-100 my-3 rounded-3">
+                    <div>
+                        <h4 class="text-primary fw-semibold">Early Life</h4>
+                        <p class="fs-5 text-dark fw-medium">Crenshaw’s Ch Jeep R.O.M was born the August of 1976 at
+                            James Crenshaw’s courtyard, off
+                            spring of the famous Finley Ch Bo R.O.M and Crenshaw’s Ch Honeybunch R.O.M. This coupling
+                            was done only once by James Crenshaw and Maurice Carver, for reasons not known.</p>
+                        <p class="fs-5 text-dark fw-medium">This cross produced four champions, the most famous of the
+                            four was Crenshaw’s Ch Jeep R.O.M
+                            but there was also Crenshaw’s Ch Missy that was fundamentally the producer of the Crenshaw
+                            yard. Crenshaw’s Ch Holly famous for her terrible bite and ability in the matches.
+                            Crenshaw’s Ch Charlie was said by some breeders of America to have been even better than
+                            Jeep.</p>
+                        <h4 class="text-primary fw-semibold">Career</h4>
+                        <p class="fs-5 text-dark fw-medium">Jeep was bred by James Crenshaw that sold him at 2 years of
+                            age to James Garrett his
+                            assistant. Jeep won four official fights against the best four American Pit bulls of
+                            America. His first match was against Pylant’s Ch Kato weighing 43 pounds and winning in 28
+                            minutes. The second match was against Cooper’s Weenie also weighing in at 43 pounds with a
+                            victory in 58 minutes. The third match was against Stinson and Stepp’s Black Dog weighing 42
+                            pounds, a victory in 2 hours and 5 minutes. For his fourth and last encounter in the pit
+                            Jeep was to face Ozzie Stevens Ch Homer.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <img src="../../public/jeepone.jpg" alt="Champion Jeep 4xw ROM"
+                                    class="w-100 my-3 rounded-3">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <img src="../../public/jeeptwo.jpg" alt="Champion Jeep 4xw ROM"
+                                    class="w-100 my-3 rounded-3">
+                            </div>
+                        </div>
+                        <p class="fs-5 text-dark fw-medium">
+                            Ch Homer, the most famous American Pitbull Terrier of that time, the very dog no breeder had
+                            had the courage to put their own dogs to confront in a match. James Garrett had this courage
+                            believing profoundly in Jeep’s incredible qualities and so it was, Jeep the better adversary
+                            of the two, won against Ozzie Stevens’ Ch Homer weighing in at 43 pounds, in 3 hours and 45
+                            minutes.
+                        </p>
+                        <p class="fs-5 text-dark fw-medium">The match between these two Titans made history. Even though
+                            Jeep was the winner, Ozzie
+                            Stevens Ch Homer is remembered by the great breeders as a deigned representative of the
+                            American Pitbull Terrier and the only one that could have put Crenshaw’s Ch Jeep R.O.M. to
+                            the test.
+
+                            Making Jeep famous and establishing his formidable value as a fighter, James Garrett
+                            proceeded to use his best qualities, that being the capacity to reproduce; a staggering
+                            figure of mountings as Champion and Grand Champion was 360 times. He had a reputation for
+                            being unmatchable and received the most important awards in America. P.O.R (Producer Of
+                            Record), and R.O.M (Register Of Merit). Only later his record would be broken by the most
+                            famous of his offspring Garrett’s White’s Tab R.O.M that was coupled 640 times.</p>
+                        <p class="fs-5 text-dark fw-medium">
+                            Some crosses noted in the American Pitbull Terrier World in which Jeep’s blood merged with
+                            other bloodlines, showed a great compatibility and gave birth to great examples such as
+                            Jeep-Red Boy/Jeep-Rascal/Jeep-Red Boy-Rascal/Jeep-Bolio.
+                            <br><br>
+                            Jeep’s offspring that made history are Garrett’s White’s Tab R.O.M, White’s Tabby Girl
+                            R.O.M, White’s Irene, Garrett’s Floyd R.O.M, Garrett’s CH Tramp R.O.M, Garrett’s Shorty,
+                            Garrett’s Rocky R.O.M, Garrett’s Jeep Junior R.O.M, Garrett’s Harley R.O.M, Garrett’s
+                            Bridgett R.O.M, Crenshaw’s Dolly R.O.M, Crenshaw’s Honeybear R.O.M, Indian Missy R.O.M,
+                            Indian Rocky R.O.M, Long’s Werdo R.O.M, and Mason’s Smile R.O.M.
+                            <br><br>
+                            Crenshaw’s Ch Jeep R.O.M was considered by many breeders as the supreme American Pitbull
+                            Terrier of the last 30 years, he established his final supremacy in dog fighting and in
+                            reproduction and no Pitbull since has matched this impact.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <img src="../../public/jeepthree.jpg" alt="Champion Jeep 4xw ROM"
+                                    class="w-100 my-3 rounded-3">
+                                <img src="../../public/jeepfour.jpg" alt="Champion Jeep 4xw ROM"
+                                    class="w-100 my-3 rounded-3">
+
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <img src="../../public/jeepfive.jpg" alt="Champion Jeep 4xw ROM"
+                                    class="w-100 my-3 rounded-3">
+                            </div>
+                        </div>
+                        <p class="fs-5 text-dark fw-medium">
+                            Jeep’s offspring that made history are Garrett’s White’s Tab R.O.M, White’s Tabby Girl
+                            R.O.M, White’s Irene, Garrett’s Floyd R.O.M, Garrett’s CH Tramp R.O.M, Garrett’s Shorty,
+                            Garrett’s Rocky R.O.M, Garrett’s Jeep Junior R.O.M, Garrett’s Harley R.O.M, Garrett’s
+                            Bridgett R.O.M, Crenshaw’s Dolly R.O.M, Crenshaw’s Honeybear R.O.M, Indian Missy R.O.M,
+                            Indian Rocky R.O.M, Long’s Werdo R.O.M, and Mason’s Smile R.O.M.
+                            <br><br>
+                            Crenshaw’s Ch Jeep R.O.M was considered by many breeders as the supreme American Pitbull
+                            Terrier of the last 30 years, he established his final supremacy in dog fighting and in
+                            reproduction and no Pitbull since has matched this impact.
+                        </p>
+                        <h4 class="text-primary fw-semibold">Pedigree</h4>
+                        <a href="https://www.apbt.online-pedigrees.com/modules.php?name=Public&file=printPedigree&dog_id=2" target="_blank">
+                            <img src="../../public/jeeppediree.png" alt="Pedigree" class="w-100 my-3 rounded-3">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/src/script.js"></script>
+</body>
+
+</html>
