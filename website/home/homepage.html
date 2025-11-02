@@ -11,11 +11,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.2.3/build/css/intlTelInput.css" />
     <link rel="stylesheet" href="/src/style.scss">
 </head>
 
 <body>
-    <header class="header bg-white border-bottom position-sticky top-0 z-10">
+    <header class="header bg-white border-bottom position-sticky shadow-sm top-0 z-10">
         <div class="header-container w-100 px-4 d-flex align-items-center justify-content-between">
             <div class="header-left d-flex align-items-center">
                 <button class="btn  btn-sm d-block d-xl-none p-2" type="button" data-bs-toggle="offcanvas"
@@ -165,7 +166,7 @@
                         </div>
 
                         <div class="d-flex flex-column gap-2">
-                            <a href="#"
+                            <a href="../kennel-admin/kennel-admin.html"
                                 class="text-decoration-none mb-2 shadow-none outline-0 px-0 d-flex align-items-center gap-3 fs-6 text-dark anchor-hover">
                                 <img src="../../public/dog.png" alt="Kaleemi Kennel"
                                     class="rounded-circle object-fit-cover border" width="40px" height="40px">
@@ -1953,7 +1954,7 @@
                                 <!-- Left: Avatar + Name -->
                                 <div class="d-flex align-items-end w-100">
                                     <div class="position-relative">
-                                        <img src="https://placehold.co/160x160?text=Profile+Photo&font=outfit" alt="Profile photo placeholder"
+                                        <img src="https://placehold.co/160x160?text=Kennel+Logo&font=outfit" alt="Profile photo placeholder"
                                             class="rounded-circle bg-white border border-3 border-dark object-fit-cover"
                                             width="160" height="160">
                                         <button
@@ -1986,100 +1987,14 @@
                                 </div>
                             </div>
 
-                            <!-- Row 2: Email, Phone (merged dropdown + input) -->
-                            <div class="row g-3 mt-0 mt-md-3">
-                                <div class="col-md-6">
-                                    <div class="mb-3 mb-md-0">
-                                        <label for="kennelEmail" class="form-label text-muted">Email</label>
-                                        <input type="email" class="form-control" id="kennelEmail" placeholder="name@example.com">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3 mb-md-0">
-                                        <label class="form-label text-muted">Phone</label>
-                                        <div class="row g-2 align-items-center">
-                                            <div class="col-auto">
-                                                <label for="countryCode" class="visually-hidden">Country code</label>
-                                                <select id="countryCode" class="form-select border country-code" style="width: 120px;">
-                                                    <option></option>
-                                                    <option value="+1" data-iso="US" selected>+1</option>
-                                                    <option value="+1" data-iso="CA">+1</option>
-                                                    <option value="+44" data-iso="GB">+44</option>
-                                                    <option value="+61" data-iso="AU">+61</option>
-                                                    <option value="+64" data-iso="NZ">+64</option>
-                                                    <option value="+91" data-iso="IN">+91</option>
-                                                    <option value="+92" data-iso="PK">+92</option>
-                                                    <option value="+971" data-iso="AE">+971</option>
-                                                    <option value="+966" data-iso="SA">+966</option>
-                                                    <option value="+20" data-iso="EG">+20</option>
-                                                    <option value="+27" data-iso="ZA">+27</option>
-                                                    <option value="+234" data-iso="NG">+234</option>
-                                                    <option value="+254" data-iso="KE">+254</option>
-                                                    <option value="+81" data-iso="JP">+81</option>
-                                                    <option value="+82" data-iso="KR">+82</option>
-                                                    <option value="+86" data-iso="CN">+86</option>
-                                                    <option value="+49" data-iso="DE">+49</option>
-                                                    <option value="+33" data-iso="FR">+33</option>
-                                                    <option value="+39" data-iso="IT">+39</option>
-                                                    <option value="+34" data-iso="ES">+34</option>
-                                                    <option value="+31" data-iso="NL">+31</option>
-                                                    <option value="+32" data-iso="BE">+32</option>
-                                                    <option value="+41" data-iso="CH">+41</option>
-                                                    <option value="+43" data-iso="AT">+43</option>
-                                                    <option value="+46" data-iso="SE">+46</option>
-                                                    <option value="+47" data-iso="NO">+47</option>
-                                                    <option value="+45" data-iso="DK">+45</option>
-                                                    <option value="+358" data-iso="FI">+358</option>
-                                                    <option value="+351" data-iso="PT">+351</option>
-                                                    <option value="+30" data-iso="GR">+30</option>
-                                                    <option value="+353" data-iso="IE">+353</option>
-                                                    <option value="+48" data-iso="PL">+48</option>
-                                                    <option value="+420" data-iso="CZ">+420</option>
-                                                    <option value="+36" data-iso="HU">+36</option>
-                                                    <option value="+380" data-iso="UA">+380</option>
-                                                    <option value="+7" data-iso="RU">+7</option>
-                                                    <option value="+7" data-iso="KZ">+7</option>
-                                                    <option value="+52" data-iso="MX">+52</option>
-                                                    <option value="+55" data-iso="BR">+55</option>
-                                                    <option value="+54" data-iso="AR">+54</option>
-                                                    <option value="+57" data-iso="CO">+57</option>
-                                                    <option value="+56" data-iso="CL">+56</option>
-                                                    <option value="+51" data-iso="PE">+51</option>
-                                                    <option value="+63" data-iso="PH">+63</option>
-                                                    <option value="+62" data-iso="ID">+62</option>
-                                                    <option value="+60" data-iso="MY">+60</option>
-                                                    <option value="+65" data-iso="SG">+65</option>
-                                                    <option value="+66" data-iso="TH">+66</option>
-                                                    <option value="+84" data-iso="VN">+84</option>
-                                                </select>
-                                            </div>
-                                            <div class="col">
-                                                <label for="kennelPhone" class="visually-hidden">Phone number</label>
-                                                <input type="tel" class="form-control" id="kennelPhone" placeholder="Phone number">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <!-- Row 3: Facebook URL, Address -->
                             <div class="row g-3 mt-0 mt-md-3">
-                                <div class="col-md-6">
+                                <div class="col-12">
                                     <div class="mb-3 mb-md-0">
                                         <label for="facebookUrl" class="form-label text-muted">Facebook URL</label>
                                         <input type="url" class="form-control" id="facebookUrl" placeholder="https://facebook.com/yourpage">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3 mb-md-0">
-                                        <label for="kennelAddress" class="form-label text-muted">Address</label>
-                                        <input type="text" class="form-control" id="kennelAddress" placeholder="Street, City, State/Province, Postal Code">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Row 4: Welcome Description -->
-                            <div class="row g-3 mt-0 mt-md-3">
                                 <div class="col-12">
                                     <div class="mb-0">
                                         <label for="welcomeDescription" class="form-label text-muted">Welcome Description</label>
@@ -2087,6 +2002,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -2103,6 +2019,7 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@21.2.3/build/js/intlTelInput.min.js"></script>
     <script src="/src/script.js"></script>
 
 </body>

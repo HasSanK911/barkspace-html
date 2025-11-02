@@ -1,5 +1,27 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize intl-tel-input for all tel inputs globally
+  if (typeof intlTelInput !== 'undefined') {
+    const telInputs = document.querySelectorAll('input[type="tel"]');
+    telInputs.forEach(input => {
+      // Skip if already initialized
+      if (input.closest('.iti')) return;
+      
+      intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+          fetch("https://ipapi.co/json/")
+            .then(function(res) { return res.json(); })
+            .then(function(data) { callback(data.country_code); })
+            .catch(function() { callback("us"); });
+        },
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@21.2.3/build/js/utils.js",
+        separateDialCode: true,
+        preferredCountries: ["us", "gb", "ca", "au", "in"]
+      });
+    });
+  }
+
   function attachPasswordToggle(inputId, buttonId) {
     const input = document.getElementById(inputId);
     const button = document.getElementById(buttonId);
@@ -167,52 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
-  // Initialize Select2 for country calling code in kennel creation with flags
-  const $countryCode = window.jQuery ? window.jQuery('#countryCode') : null;
-  if ($countryCode && $countryCode.length) {
-    function isoToFlagEmoji(iso) {
-      if (!iso) return '';
-      return iso
-        .toUpperCase()
-        .replace(/./g, char => String.fromCodePoint(char.charCodeAt(0) + 127397));
-    }
-
-    function formatDial(option) {
-      if (!option.id) return option.text;
-      const iso = option.element?.getAttribute('data-iso');
-      const flag = isoToFlagEmoji(iso);
-      const text = option.text;
-      return window.jQuery(`<span>${flag ? flag + ' ' : ''}${text}</span>`);
-    }
-
-    $countryCode.select2({
-      placeholder: 'Country code',
-      width: 'style',
-      minimumResultsForSearch: 0,
-      allowClear: true,
-      dropdownParent: window.jQuery('#createKennelModal'), // keep inside the modal for focus & click
-      templateResult: formatDial,
-      templateSelection: formatDial
-    });
-
-    // Re-initialize inside modal after it is shown to avoid focus trap issues
-    const kennelModal = document.getElementById('createKennelModal');
-    if (kennelModal) {
-      kennelModal.addEventListener('shown.bs.modal', () => {
-        $countryCode.select2('destroy');
-        $countryCode.select2({
-          placeholder: 'Country code',
-          width: 'style',
-          minimumResultsForSearch: 0,
-          allowClear: true,
-          dropdownParent: window.jQuery('#createKennelModal'),
-          templateResult: formatDial,
-          templateSelection: formatDial
-        });
-      });
-    }
-  }
 
   // Handle offcanvas open/close for Select2 dropdowns
   const offcanvasElement = document.getElementById('offcanvasExample');
@@ -909,16 +885,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-  // Handle image modal
-  document.addEventListener('DOMContentLoaded', function() {
-    const imageModal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    
-    if (imageModal && modalImage) {
-      imageModal.addEventListener('show.bs.modal', function (event) {
-          const trigger = event.relatedTarget;
-          const imageSrc = trigger?.getAttribute('data-src') || '';
-          modalImage.src = imageSrc;
-      });
-    }
-});
+ 
